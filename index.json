@@ -2,13 +2,13 @@
   "archives": [
     {
       "epoch": 219,
-      "generatedAt": "2026-07-06T16:24:44Z",
+      "generatedAt": "2026-07-06T16:31:48Z",
       "path": "epochs/219/manifest.json",
-      "status": "partial"
+      "status": "complete"
     }
   ],
   "branch": "main",
   "repository": "XARKUR/qubic-history",
   "schemaVersion": "qubic-history-v1",
-  "updatedAt": "2026-07-06T16:24:44Z"
+  "updatedAt": "2026-07-06T16:31:48Z"
 }

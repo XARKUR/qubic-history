@@ -1,10 +1,10 @@
 {
   "epoch": 219,
   "files": {
-    "qearn/summary.json": "missing",
+    "qearn/summary.json": "ok",
     "qearn/unlocks.jsonl": "ok"
   },
-  "generatedAt": "2026-07-06T16:24:44Z",
+  "generatedAt": "2026-07-06T16:31:48Z",
   "schemaVersion": "qubic-history-v1",
-  "status": "partial"
+  "status": "complete"
 }
