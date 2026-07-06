@@ -4,8 +4,7 @@
     "proposals/ballots.jsonl": "ok",
     "proposals/documents/manifest.json": "missing",
     "proposals/history.json": "ok",
-    "proposals/raw.json": "ok",
-    "qearn/unlocks.jsonl": "ok"
+    "proposals/raw.json": "ok"
   },
   "generatedAt": "2026-07-06T18:10:56Z",
   "schemaVersion": "qubic-history-v1",
