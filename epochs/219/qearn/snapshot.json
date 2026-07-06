@@ -1732,25 +1732,25 @@
       "burnedAmount": 0,
       "burnedPercent": 0.0,
       "currentBonusAmount": 49557131331,
-      "currentLockedAmount": 426033801897,
+      "currentLockedAmount": 443308054834,
       "earlyUnlockedAmount": 0,
       "earlyUnlockedPercent": 0.0,
       "epoch": 220,
       "epochsLeft": 53,
-      "lockedAmount": 426033801897,
+      "lockedAmount": 443308054834,
       "progress": 0.0,
       "rewardedAmount": 0,
       "rewardedPercent": 0.0,
       "status": "locked",
       "unlockEpoch": 273,
       "unlockTime": "2027-07-07",
-      "yield": 0.1163
+      "yield": 0.1118
     }
   },
   "percentOfSupply": 0.0,
   "totalBoostedAmount": 2349592532913,
   "totalBurnedAmount": 663998237137,
-  "totalLockedAmount": 33078668167683,
+  "totalLockedAmount": 33095942420620,
   "totalRewardedAmount": 2548958539800,
-  "updatedAt": "2026-07-06T16:32:53Z"
+  "updatedAt": "2026-07-06T17:33:02Z"
 }

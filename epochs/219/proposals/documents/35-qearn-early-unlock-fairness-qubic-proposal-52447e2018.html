@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>QEARN EARLY-UNLOCK FAIRNESS — QUBIC PROPOSAL</title>
+<link rel="icon" href="logo.svg">
+<style>
+    @import url('https://fonts.cdnfonts.com/css/press-start-2p');
+
+    :root {
+        --main-bg: #0a0015;
+        --text-color: #ff2db6;
+        --border-color: #5000aa;
+        --hover-color: #9933ff;
+        --accent-color: #00f7ff;
+        --tab-inactive: #1f0033;
+        --glow-color: #fe00fe80;
+        --danger-color: #ff0033;
+        --warning-color: #ffcc00;
+        --success-color: #00eebb;
+        --font-display: 'Press Start 2P', monospace;
+        --font-body: 'Press Start 2P', monospace;
+    }
+
+    body {
+        background-color: var(--main-bg);
+        color: var(--text-color);
+        font-family: var(--font-display);
+        margin: 0 0 0 52px;
+        overflow-x: hidden;
+        position: relative;
+    }
+
+    /* CRT Effect - reduced intensity */
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            rgba(255, 255, 255, 0.03) 50%,
+            rgba(0, 0, 0, 0.03) 50%
+        );
+        background-size: 100% 4px;
+        pointer-events: none;
+        z-index: 1000;
+        animation: scanline 10s linear infinite;
+    }
+
+    /* Glowing title */
+    .title {
+        font-size: 3.5em;
+        letter-spacing: 0.2em;
+        margin-bottom: 1rem;
+        text-shadow: 0 0 10px var(--glow-color),
+                     0 0 20px var(--glow-color),
+                     0 0 30px var(--glow-color),
+                     0 0 40px var(--glow-color);
+        animation: textGlow 2s infinite alternate;
+    }
+
+    /* Detail page title sizing (longer than single-word page titles) */
+    .detail-title {
+        font-size: 2.1em;
+        letter-spacing: 0.12em;
+        line-height: 1.5;
+    }
+
+    /* Nav Rail */
+    .nav-rail {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 52px;
+        height: 100%;
+        background: linear-gradient(180deg, #0a0015 0%, #150030 50%, #200040 100%);
+        border-right: 2px solid var(--border-color);
+        z-index: 10000;
+        display: flex;
+        flex-direction: column;
+        padding: 10px 0;
+        transition: width 0.3s ease;
+        overflow: hidden;
+    }
+
+    .nav-rail:hover {
+        width: 220px;
+        box-shadow: 3px 0 25px rgba(255, 0, 255, 0.4);
+    }
+
+    .nav-rail-link {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 12px 14px 12px 11px;
+        color: var(--text-color);
+        text-decoration: none;
+        border-left: 3px solid transparent;
+        transition: all 0.25s ease;
+        position: relative;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .nav-rail-link::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.08), transparent);
+        transition: 0.5s;
+    }
+
+    .nav-rail-link:hover::before {
+        left: 100%;
+    }
+
+    .nav-rail-link:hover {
+        background: rgba(80, 0, 170, 0.5);
+        border-left-color: var(--accent-color);
+    }
+
+    .nav-rail-link.active {
+        background: rgba(80, 0, 170, 0.7);
+        border-left-color: var(--accent-color);
+        box-shadow: inset 0 0 15px rgba(255, 0, 255, 0.15);
+    }
+
+    .nav-rail-icon {
+        min-width: 24px;
+        width: 24px;
+        height: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 1.2em;
+        line-height: 1;
+        filter: drop-shadow(0 0 4px var(--glow-color));
+        flex-shrink: 0;
+    }
+
+    .nav-rail-icon.emoji {
+        filter: grayscale(1) brightness(0.6) sepia(1) hue-rotate(280deg) saturate(6) drop-shadow(0 0 4px var(--glow-color));
+    }
+
+    .nav-rail-icon img {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        filter: drop-shadow(0 0 4px var(--glow-color));
+    }
+
+    .nav-rail-divider {
+        height: 1px;
+        margin: 8px 12px;
+        background: var(--border-color);
+        opacity: 0.5;
+    }
+
+    .nav-rail-label {
+        font-size: 0.65em;
+        opacity: 0;
+        transition: opacity 0.2s ease 0.1s;
+    }
+
+    .nav-rail:hover .nav-rail-label {
+        opacity: 1;
+    }
+
+    /* Nav Rail Stats */
+    .nav-rail-stats {
+        margin-top: auto;
+        margin-bottom: 30px;
+        border-top: 1px solid var(--border-color);
+        padding: 12px 14px 12px 11px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        opacity: 0;
+        transition: opacity 0.2s ease 0.1s;
+        white-space: nowrap;
+        font-size: 0.6em;
+    }
+
+    .nav-rail:hover .nav-rail-stats {
+        opacity: 1;
+    }
+
+    .nav-rail-stat {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .nav-rail-stat-label {
+        color: var(--text-color);
+        opacity: 0.7;
+    }
+
+    .nav-rail-stat-value {
+        color: var(--accent-color);
+    }
+
+    .header {
+        text-align: center;
+        padding: 2.4rem 2rem;
+        border-bottom: 4px solid var(--border-color);
+        position: relative;
+        margin: 20px 20px 2rem 20px;
+        overflow: hidden;
+        background:
+            radial-gradient(ellipse at 50% 135%, rgba(255, 45, 182, 0.22), transparent 58%),
+            linear-gradient(180deg, #000000 0%, #001a33 100%);
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 40px 30px 40px;
+    }
+
+    .subtitle {
+        font-size: 0.9em;
+        color: var(--accent-color);
+        margin-top: 1rem;
+        text-shadow: 0 0 5px var(--glow-color);
+        line-height: 1.6;
+    }
+
+    /* Section Divider */
+    .section-divider {
+        display: flex;
+        align-items: center;
+        margin: 30px 0;
+    }
+
+    .section-divider::before,
+    .section-divider::after {
+        content: '';
+        flex: 1;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+    }
+
+    .section-divider-text {
+        padding: 0 20px;
+        font-size: 0.9em;
+        color: var(--accent-color);
+        text-shadow: 0 0 10px var(--glow-color);
+        white-space: nowrap;
+    }
+
+    /* Proposal parameters (spec grid) */
+    .spec-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+
+    .spec-item {
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid var(--border-color);
+        border-left: 3px solid var(--accent-color);
+        border-radius: 0 4px 4px 0;
+        padding: 14px 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 9px;
+        transition: border-left-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .spec-item:hover {
+        border-left-color: var(--text-color);
+        box-shadow: inset 0 0 16px rgba(255, 0, 255, 0.12);
+    }
+
+    .spec-label {
+        font-size: 0.5em;
+        color: var(--accent-color);
+        letter-spacing: 0.06em;
+        line-height: 1.4;
+    }
+
+    .spec-value {
+        font-size: 0.62em;
+        color: var(--text-color);
+        line-height: 1.55;
+        word-break: break-word;
+    }
+
+    .spec-value.ok { color: var(--success-color); }
+    .spec-value.warn { color: var(--warning-color); }
+
+    /* Back link */
+    .back-link {
+        display: inline-block;
+        color: var(--accent-color);
+        text-decoration: none;
+        font-size: 0.6em;
+        padding: 10px 15px;
+        margin-bottom: 24px;
+        background: rgba(0, 247, 255, 0.1);
+        border: 1px solid var(--accent-color);
+        border-radius: 4px;
+        transition: all 0.3s ease;
+    }
+
+    .back-link:hover {
+        color: #000;
+        background: var(--accent-color);
+        box-shadow: 0 0 15px var(--accent-color);
+    }
+
+    /* === Hero stat cards === */
+    .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin-bottom: 26px;
+    }
+
+    .hero-card {
+        position: relative;
+        background: rgba(25, 0, 51, 0.6);
+        border: 2px solid var(--border-color);
+        padding: 20px 18px;
+        text-align: center;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .hero-card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(0, 247, 255, 0.08), transparent 60%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .hero-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 0 18px var(--glow-color);
+        border-color: var(--accent-color);
+    }
+
+    .hero-card:hover::before { opacity: 1; }
+
+    .hero-label {
+        font-family: var(--font-display);
+        font-size: 0.58em;
+        color: var(--accent-color);
+        letter-spacing: 0.05em;
+        margin-bottom: 14px;
+        line-height: 1.4;
+    }
+
+    .hero-value {
+        font-family: var(--font-display);
+        font-size: 1em;
+        line-height: 1.3;
+        color: var(--text-color);
+        text-shadow: 0 0 12px var(--glow-color);
+        letter-spacing: 0.01em;
+    }
+
+    .hero-value.danger { color: var(--danger-color); text-shadow: 0 0 12px rgba(255, 0, 51, 0.6); }
+
+    .hero-sub {
+        font-family: var(--font-display);
+        font-size: 0.5em;
+        color: var(--text-color);
+        opacity: 0.6;
+        margin-top: 12px;
+        line-height: 1.5;
+    }
+
+    /* === Chart figure === */
+    .glide-figure {
+        margin: 0 0 22px 0;
+        padding: 22px 26px 18px 26px;
+        border: 2px solid var(--border-color);
+        background:
+            radial-gradient(ellipse at 50% 0%, rgba(80, 0, 170, 0.28), transparent 70%),
+            rgba(25, 0, 51, 0.5);
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .glide-figure:hover {
+        border-color: var(--hover-color);
+        box-shadow: 0 0 22px var(--glow-color);
+    }
+
+    .glide-caption {
+        font-family: var(--font-display);
+        font-size: 0.68em;
+        color: var(--accent-color);
+        text-shadow: 0 0 8px var(--glow-color);
+        text-align: center;
+        margin-bottom: 16px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        line-height: 1.4;
+    }
+
+    .glide-caption::before { content: '>'; color: var(--text-color); }
+
+    .glide-chart {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-width: 920px;
+        margin: 0 auto;
+    }
+
+    .grid-line { stroke: var(--border-color); stroke-width: 1; }
+    .grid-line.h { stroke-opacity: 0.35; }
+    .grid-line.v { stroke-opacity: 0.18; }
+    .axis-line { stroke: var(--border-color); stroke-width: 1.5; stroke-opacity: 0.7; }
+    .axis-label {
+        fill: var(--text-color);
+        opacity: 0.6;
+        font-family: var(--font-display);
+        font-size: 10px;
+    }
+    .axis-label.x { text-anchor: middle; }
+    .axis-label.y { text-anchor: end; }
+    .axis-title {
+        fill: var(--accent-color);
+        opacity: 0.8;
+        font-family: var(--font-display);
+        font-size: 9px;
+        letter-spacing: 0.08em;
+        text-anchor: middle;
+    }
+
+    /* === Stacked-bar chart (current vs after patch) === */
+    .bar-cap {
+        fill: var(--accent-color);
+        opacity: 0.9;
+        font-family: var(--font-display);
+        font-size: 11px;
+        text-anchor: middle;
+        text-shadow: 0 0 6px var(--glow-color);
+    }
+    .bar-seg { stroke: var(--main-bg); stroke-width: 1.5; }
+    .bar-paid { fill: var(--warning-color); }
+    .bar-burn { fill: var(--danger-color); }
+    .bar-stay { fill: var(--success-color); }
+    .bar-val {
+        fill: #0a0015;
+        font-family: var(--font-display);
+        font-size: 11px;
+        text-anchor: middle;
+        font-weight: bold;
+    }
+    .bar-val.light { fill: #0a0015; }
+    /* Value labels appear only once the bars have filled in (JS on) */
+    html.js .bar-val { opacity: 0; transition: opacity 0.5s ease; }
+    html.js .glide-chart.bars-in .bar-val { opacity: 1; transition-delay: 1s; }
+    html.js .glide-chart.bars-in.instant .bar-val { opacity: 1; transition: none; }
+
+    .glide-legend {
+        display: flex;
+        gap: 26px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 16px;
+        font-family: var(--font-display);
+        font-size: 0.5em;
+        color: var(--text-color);
+    }
+    .lg { display: flex; align-items: center; gap: 9px; }
+    .sw { width: 18px; height: 12px; display: inline-block; border-radius: 2px; flex-shrink: 0; }
+    .sw-paid { background: var(--warning-color); box-shadow: 0 0 6px var(--warning-color); }
+    .sw-burn { background: var(--danger-color); box-shadow: 0 0 6px var(--danger-color); }
+    .sw-stay { background: var(--success-color); box-shadow: 0 0 6px var(--success-color); }
+
+    /* === Proposal Detail Content === */
+    .proposal-section {
+        border: 2px solid var(--border-color);
+        background: rgba(25, 0, 51, 0.5);
+        padding: 18px 22px 20px 22px;
+        margin-bottom: 14px;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .proposal-section:hover {
+        border-color: var(--hover-color);
+        box-shadow: 0 0 22px var(--glow-color);
+    }
+
+    .proposal-section-title {
+        font-size: 0.8em;
+        color: var(--accent-color);
+        text-shadow: 0 0 8px var(--glow-color);
+        margin-bottom: 13px;
+        padding-bottom: 9px;
+        border-bottom: 1px solid var(--border-color);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        line-height: 1.4;
+    }
+
+    .proposal-section-title::before {
+        content: '>';
+        color: var(--text-color);
+    }
+
+    .detail-text {
+        font-family: var(--font-display);
+        font-size: 0.62em;
+        line-height: 1.85;
+        letter-spacing: 0.02em;
+        color: var(--text-color);
+        max-width: 88ch;
+        margin: 0 0 12px 0;
+    }
+
+    .detail-text:last-child {
+        margin-bottom: 0;
+    }
+
+    .detail-list {
+        list-style: none;
+        margin: 0 0 14px 0;
+        padding: 0;
+        max-width: 88ch;
+    }
+
+    .detail-list li {
+        font-family: var(--font-display);
+        font-size: 0.62em;
+        line-height: 1.9;
+        padding: 9px 0 9px 24px;
+        position: relative;
+        border-bottom: 1px solid rgba(80, 0, 170, 0.25);
+    }
+
+    .detail-list li:last-child {
+        border-bottom: none;
+    }
+
+    .detail-list li::before {
+        content: '>';
+        position: absolute;
+        left: 0;
+        color: var(--accent-color);
+    }
+
+    /* Two-column list for dense technical lists */
+    .detail-list.cols2 { max-width: none; column-count: 2; column-gap: 36px; }
+    .detail-list.cols2 li { break-inside: avoid; border-bottom: none; padding-top: 6px; padding-bottom: 6px; }
+
+    /* Compact outcome strip (closing summary) */
+    .outcome-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin: 0 0 12px 0;
+    }
+    .outcome-card {
+        border: 1px solid var(--border-color);
+        border-top: 3px solid var(--accent-color);
+        background: rgba(0, 0, 0, 0.25);
+        padding: 15px 16px;
+        font-size: 0.62em;
+        line-height: 1.7;
+        color: var(--text-color);
+        transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .outcome-card:hover {
+        border-color: var(--accent-color);
+        box-shadow: 0 0 16px var(--glow-color);
+        transform: translateY(-3px);
+    }
+    .outcome-card.key { border-top-color: var(--success-color); }
+    .outcome-card .oc-head {
+        display: block;
+        color: var(--accent-color);
+        margin-bottom: 9px;
+        line-height: 1.5;
+    }
+    .outcome-card .oc-head.good { color: var(--success-color); }
+
+    /* Implementation PR link */
+    .pr-link {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        text-decoration: none;
+        border: 2px solid var(--border-color);
+        border-left: 3px solid var(--accent-color);
+        border-radius: 6px;
+        background: rgba(0, 0, 0, 0.3);
+        padding: 16px 20px;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .pr-link:hover {
+        border-color: var(--accent-color);
+        box-shadow: 0 0 18px var(--glow-color);
+        transform: translateX(4px);
+    }
+    .pr-link svg {
+        width: 26px;
+        height: 26px;
+        fill: var(--accent-color);
+        flex-shrink: 0;
+        filter: drop-shadow(0 0 4px var(--glow-color));
+    }
+    .pr-meta { display: flex; flex-direction: column; gap: 7px; flex: 1; min-width: 0; }
+    .pr-repo { font-family: var(--font-display); font-size: 0.5em; color: var(--accent-color); letter-spacing: 0.05em; }
+    .pr-title { font-family: var(--font-display); font-size: 0.62em; color: var(--text-color); line-height: 1.5; }
+    .pr-go { font-family: var(--font-display); font-size: 0.5em; color: var(--accent-color); white-space: nowrap; flex-shrink: 0; }
+
+    /* Inline code */
+    code {
+        font-family: var(--font-display);
+        font-size: 0.85em;
+        color: var(--accent-color);
+        background: rgba(0, 247, 255, 0.1);
+        border: 1px solid rgba(0, 247, 255, 0.3);
+        padding: 1px 6px;
+        border-radius: 3px;
+        word-break: break-word;
+    }
+
+    /* Inline highlights for scannable prose */
+    .hl {
+        color: var(--accent-color);
+        text-shadow: 0 0 8px rgba(0, 247, 255, 0.55);
+    }
+    .hl-good {
+        color: #ffffff;
+        text-shadow: 0 0 8px var(--glow-color), 0 0 16px var(--glow-color);
+    }
+    .hl-bad {
+        color: var(--danger-color);
+        text-shadow: 0 0 8px rgba(255, 0, 51, 0.55);
+    }
+
+    /* Themed tables */
+    .detail-table-wrap {
+        overflow-x: auto;
+        margin: 4px 0 16px 0;
+    }
+
+    .detail-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: var(--font-display);
+        font-size: 0.55em;
+        line-height: 1.5;
+    }
+
+    .detail-table th,
+    .detail-table td {
+        border: 1px solid var(--border-color);
+        padding: 10px 13px;
+        text-align: left;
+    }
+
+    .detail-table th {
+        line-height: 1.5;
+        background: linear-gradient(135deg, var(--border-color) 0%, rgba(80, 0, 170, 0.4) 100%);
+        color: var(--accent-color);
+        text-shadow: 0 0 6px var(--glow-color);
+        white-space: nowrap;
+        vertical-align: bottom;
+    }
+
+    .detail-table td {
+        color: var(--text-color);
+        white-space: nowrap;
+    }
+
+    .detail-table tbody tr:nth-child(odd) td { background: rgba(0, 26, 51, 0.22); }
+    .detail-table tbody tr:nth-child(even) td { background: rgba(25, 0, 51, 0.3); }
+    .detail-table tbody tr:hover td { background: rgba(0, 247, 255, 0.07); }
+
+    .detail-table .num {
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .detail-table .col-key {
+        color: var(--accent-color);
+        font-weight: bold;
+    }
+
+    .detail-table .bad { color: var(--danger-color); }
+    .detail-table .good { color: var(--success-color); }
+
+    .detail-table tbody tr.total td {
+        border-top: 2px solid var(--accent-color);
+        color: var(--accent-color);
+        font-weight: bold;
+        background: rgba(0, 247, 255, 0.06);
+    }
+
+    .table-note {
+        font-family: var(--font-display);
+        font-size: 0.5em;
+        line-height: 1.7;
+        color: var(--text-color);
+        opacity: 0.7;
+        max-width: none;
+        margin: 0;
+    }
+
+    .data-links {
+        font-family: var(--font-display);
+        font-size: 0.55em;
+        line-height: 1.9;
+        margin-top: 6px;
+    }
+    .data-links a {
+        color: var(--accent-color);
+        text-decoration: none;
+        border-bottom: 1px dotted var(--accent-color);
+    }
+    .data-links a:hover {
+        color: #fff;
+        text-shadow: 0 0 8px var(--glow-color);
+    }
+
+    /* === Lifecycle simulation slider === */
+    .sim-panel {
+        border: 2px solid var(--border-color);
+        background: rgba(25, 0, 51, 0.4);
+        border-radius: 6px;
+        margin: 6px 0 16px 0;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .sim-panel:hover {
+        border-color: var(--hover-color);
+        box-shadow: 0 0 18px var(--glow-color);
+    }
+    .sim-slider-wrap {
+        padding: 18px 22px 16px 22px;
+        border-bottom: 1px solid var(--border-color);
+    }
+    .sim-slider-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        margin-bottom: 16px;
+    }
+    .sim-slider-label {
+        font-size: 0.55em;
+        color: var(--accent-color);
+        letter-spacing: 0.08em;
+    }
+    .sim-epoch {
+        font-size: 1.1em;
+        color: var(--text-color);
+        text-shadow: 0 0 10px var(--glow-color);
+    }
+    .sim-slider {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        height: 6px;
+        border-radius: 3px;
+        background: linear-gradient(90deg, var(--border-color), var(--hover-color));
+        outline: none;
+        margin: 0;
+    }
+    .sim-slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--accent-color);
+        border: 2px solid var(--main-bg);
+        box-shadow: 0 0 10px var(--accent-color);
+        cursor: pointer;
+        transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+    .sim-slider::-webkit-slider-thumb:hover {
+        box-shadow: 0 0 16px var(--accent-color);
+        transform: scale(1.12);
+    }
+    .sim-slider::-moz-range-thumb {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--accent-color);
+        border: 2px solid var(--main-bg);
+        box-shadow: 0 0 10px var(--accent-color);
+        cursor: pointer;
+    }
+    .sim-slider::-moz-range-track {
+        height: 6px;
+        border-radius: 3px;
+        background: linear-gradient(90deg, var(--border-color), var(--hover-color));
+    }
+    .sim-slider:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 6px; }
+    .sim-ticks {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 12px;
+        font-family: var(--font-display);
+        font-size: 0.5em;
+        color: var(--text-color);
+        opacity: 0.55;
+    }
+
+    .sim-readout {
+        padding: 18px 22px 20px 22px;
+    }
+    .sim-readout-top {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 30px;
+        font-size: 0.55em;
+        color: var(--accent-color);
+        letter-spacing: 0.05em;
+        padding-bottom: 16px;
+        margin-bottom: 18px;
+        border-bottom: 1px solid var(--border-color);
+    }
+    .sim-readout-top b {
+        color: var(--text-color);
+        margin-left: 9px;
+        font-weight: normal;
+    }
+    .sim-readout-top b.bad { color: var(--danger-color); text-shadow: 0 0 8px rgba(255, 0, 51, 0.5); }
+    .sim-yield {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        margin-bottom: 20px;
+    }
+    .sim-yield-row { display: flex; align-items: center; gap: 14px; }
+    .sim-yield-name {
+        flex: 0 0 132px;
+        font-size: 0.5em;
+        color: var(--accent-color);
+        line-height: 1.4;
+    }
+    .sim-yield-bar {
+        flex: 1;
+        height: 16px;
+        background: rgba(0, 0, 0, 0.4);
+        border: 1px solid var(--border-color);
+        border-radius: 3px;
+        overflow: hidden;
+    }
+    .sim-yield-bar i {
+        display: block;
+        height: 100%;
+        border-radius: 2px 0 0 2px;
+        transition: width 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+    .sim-bar-actual { background: linear-gradient(90deg, var(--text-color), #ff6fd0); box-shadow: 0 0 8px var(--glow-color); }
+    .sim-bar-fair { background: linear-gradient(90deg, var(--accent-color), #80fbff); box-shadow: 0 0 8px var(--accent-color); }
+    .sim-yield-val {
+        flex: 0 0 92px;
+        text-align: right;
+        font-size: 0.55em;
+        color: var(--text-color);
+        font-variant-numeric: tabular-nums;
+    }
+    .sim-yield-val.fair { color: var(--accent-color); }
+    .sim-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+        gap: 10px;
+    }
+    .sim-stat {
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid var(--border-color);
+        border-left: 3px solid var(--accent-color);
+        border-radius: 0 4px 4px 0;
+        padding: 12px 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .sim-stat span {
+        font-size: 0.46em;
+        color: var(--accent-color);
+        letter-spacing: 0.05em;
+        line-height: 1.4;
+    }
+    .sim-stat b {
+        font-size: 0.6em;
+        color: var(--text-color);
+        font-weight: normal;
+        line-height: 1.4;
+    }
+
+    /* Voting options (proposal text, no live vote counts) */
+    .detail-vote-option {
+        background: rgba(0, 26, 51, 0.3);
+        border: 2px solid var(--border-color);
+        border-radius: 6px;
+        padding: 18px 20px;
+        margin-bottom: 12px;
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .detail-vote-option:last-child {
+        margin-bottom: 0;
+    }
+
+    .detail-vote-option:hover {
+        border-color: var(--accent-color);
+        box-shadow: 0 0 15px var(--glow-color);
+        transform: translateX(5px);
+    }
+
+    .detail-vote-option.proposed {
+        border-color: var(--success-color);
+        background: rgba(0, 238, 187, 0.08);
+    }
+
+    .detail-vote-num {
+        flex-shrink: 0;
+        background: var(--border-color);
+        color: #fff;
+        border: 1px solid var(--accent-color);
+        border-radius: 4px;
+        padding: 9px 11px;
+        font-size: 0.6em;
+        line-height: 1.4;
+        white-space: nowrap;
+    }
+
+    .detail-vote-option.proposed .detail-vote-num {
+        background: rgba(0, 238, 187, 0.25);
+        border-color: var(--success-color);
+    }
+
+    .detail-vote-text {
+        font-family: var(--font-display);
+        font-size: 0.62em;
+        line-height: 1.9;
+        flex: 1;
+    }
+
+    .vote-tag {
+        display: inline-block;
+        font-family: var(--font-display);
+        font-size: 0.5em;
+        color: var(--success-color);
+        border: 1px solid var(--success-color);
+        border-radius: 3px;
+        padding: 3px 7px;
+        margin-bottom: 8px;
+    }
+
+    .vote-head {
+        display: block;
+        color: var(--accent-color);
+        margin-bottom: 9px;
+        line-height: 1.6;
+    }
+    .detail-vote-option.proposed .vote-head { color: var(--success-color); }
+
+    /* Retro Footer */
+    .retro-footer {
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+        border-top: 2px solid var(--border-color);
+        background: linear-gradient(0deg, #0a0015 0%, #200040 100%);
+        font-size: 0.65em;
+        color: var(--text-color);
+        opacity: 0.8;
+    }
+
+    /* === Scroll reveal (only active when JS is on) === */
+    html.js .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+    html.js .reveal.in {
+        opacity: 1;
+        transform: none;
+    }
+    html.js .hero-stats.in .hero-card { animation: rise 0.55s cubic-bezier(0.2, 0.7, 0.2, 1) backwards; }
+    html.js .hero-stats.in .hero-card:nth-child(1) { animation-delay: 0.05s; }
+    html.js .hero-stats.in .hero-card:nth-child(2) { animation-delay: 0.13s; }
+    html.js .hero-stats.in .hero-card:nth-child(3) { animation-delay: 0.21s; }
+    html.js .hero-stats.in .hero-card:nth-child(4) { animation-delay: 0.29s; }
+
+    @media (prefers-reduced-motion: reduce) {
+        html.js .reveal { opacity: 1; transform: none; transition: none; }
+        html.js .hero-stats.in .hero-card { animation: none; }
+        .title { animation: none; }
+    }
+
+    /* Animations */
+    @keyframes rise {
+        from { opacity: 0; transform: translateY(18px); }
+        to { opacity: 1; transform: none; }
+    }
+
+    @keyframes textGlow {
+        from {
+            text-shadow: 0 0 5px var(--glow-color),
+                        0 0 10px var(--glow-color);
+        }
+        to {
+            text-shadow: 0 0 10px var(--glow-color),
+                        0 0 20px var(--glow-color),
+                        0 0 30px var(--glow-color);
+        }
+    }
+
+    @keyframes scanline {
+        0% { transform: translateY(-100%); }
+        100% { transform: translateY(100%); }
+    }
+
+    /* === Themed scrollbar (matches UI palette) === */
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: var(--accent-color, #00f7ff) var(--main-bg, #0a0015);
+    }
+    ::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+    }
+    ::-webkit-scrollbar-track {
+        background: var(--main-bg, #0a0015);
+        border-left: 1px solid var(--border-color, #5000aa);
+    }
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, var(--accent-color, #00f7ff), var(--text-color, #ff2db6));
+        border: 2px solid var(--main-bg, #0a0015);
+        border-radius: 6px;
+        box-shadow: 0 0 6px var(--glow-color, #fe00fe80);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(180deg, var(--text-color, #ff2db6), var(--accent-color, #00f7ff));
+        box-shadow: 0 0 10px var(--accent-color, #00f7ff);
+    }
+    ::-webkit-scrollbar-corner {
+        background: var(--main-bg, #0a0015);
+    }
+
+    /* === Page Transition === */
+    .page-load-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #00f7ff, #80fbff, #00f7ff);
+        background-size: 200% 100%;
+        box-shadow: 0 0 10px #00f7ff, 0 0 20px rgba(0, 247, 255, 0.5);
+        z-index: 99999;
+        pointer-events: none;
+        opacity: 0;
+    }
+    .page-load-bar.active {
+        opacity: 1;
+        animation: loadBarProgress 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards,
+                   loadBarGlow 0.8s ease-in-out infinite,
+                   loadBarShimmer 1.5s linear infinite;
+    }
+    .page-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--main-bg, #0a0015);
+        z-index: 99998;
+        opacity: 1;
+        pointer-events: none;
+        transition: opacity 0.4s ease;
+    }
+    .page-overlay.hidden {
+        opacity: 0;
+    }
+    @keyframes loadBarProgress {
+        0% { width: 0; }
+        100% { width: 90%; }
+    }
+    @keyframes loadBarGlow {
+        0%, 100% { box-shadow: 0 0 10px #00f7ff, 0 0 20px rgba(0, 247, 255, 0.5); }
+        50% { box-shadow: 0 0 20px #00f7ff, 0 0 40px rgba(0, 247, 255, 0.7); }
+    }
+    @keyframes loadBarShimmer {
+        0% { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
+    }
+</style>
+</head>
+<body>
+<script>document.documentElement.className += ' js';</script>
+<div class="page-load-bar" id="page-load-bar"></div>
+<div class="page-overlay" id="page-overlay"></div>
+
+<!-- Nav Rail -->
+<nav class="nav-rail" id="nav-rail">
+    <a href="pool.html" class="nav-rail-link"><span class="nav-rail-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.531 12.469 6.619 20.38a1 1 0 1 1-3-3l7.912-7.912"/><path d="M15.686 4.314A12.5 12.5 0 0 0 5.461 2.958 1 1 0 0 0 5.58 4.71a22 22 0 0 1 6.318 3.393"/><path d="M17.7 3.7a1 1 0 0 0-1.4 0l-4.6 4.6a1 1 0 0 0 0 1.4l2.6 2.6a1 1 0 0 0 1.4 0l4.6-4.6a1 1 0 0 0 0-1.4z"/><path d="M19.686 8.314a12.501 12.501 0 0 1 1.356 10.225 1 1 0 0 1-1.751-.119 22 22 0 0 0-3.393-6.319"/></svg></span><span class="nav-rail-label">POOL</span></a>
+    <a href="payout.html" class="nav-rail-link"><span class="nav-rail-icon">$</span><span class="nav-rail-label">PAYOUT</span></a>
+    <a href="tracker.html" class="nav-rail-link"><span class="nav-rail-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></span><span class="nav-rail-label">TRACKER</span></a>
+    <a href="computors.html" class="nav-rail-link"><span class="nav-rail-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v2"/><path d="M15 2v2"/><path d="M9 20v2"/><path d="M15 20v2"/><path d="M20 9h2"/><path d="M20 15h2"/><path d="M2 9h2"/><path d="M2 15h2"/></svg></span><span class="nav-rail-label">COMPUTORS</span></a>
+    <a href="proposals.html" class="nav-rail-link active"><span class="nav-rail-icon">✎</span><span class="nav-rail-label">PROPOSALS</span></a>
+    <a href="live-stats.html" class="nav-rail-link"><span class="nav-rail-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg></span><span class="nav-rail-label">LIVE STATS</span></a>
+    <a href="get-started.html" class="nav-rail-link"><span class="nav-rail-icon">»</span><span class="nav-rail-label">GET STARTED</span></a>
+    <div class="nav-rail-divider"></div>
+    <a href="doge-tracker.html" class="nav-rail-link"><span class="nav-rail-icon"><img src="tracker-logo2.jpg" alt="DOGE"></span><span class="nav-rail-label">DOGE TRACKER</span></a>
+    <div class="nav-rail-stats">
+        <div class="nav-rail-stat">
+            <span class="nav-rail-stat-label">RATE</span>
+            <span class="nav-rail-stat-value" id="tick-rate-nav">-- Tick/m</span>
+        </div>
+        <div class="nav-rail-stat">
+            <span class="nav-rail-stat-label">QUBIC</span>
+            <span class="nav-rail-stat-value" id="qubic-price-nav">$0.00000000</span>
+        </div>
+        <div class="nav-rail-stat">
+            <span class="nav-rail-stat-label">STATUS</span>
+            <span class="nav-rail-stat-value" id="mining-status-nav">UNKNOWN</span>
+        </div>
+    </div>
+</nav>
+
+<header class="header">
+    <h1 class="title detail-title">QEARN EARLY-UNLOCK FAIRNESS</h1>
+    <div class="subtitle">Reserve QEarn Bonus Rewards For Completed 52-Epoch Locks</div>
+</header>
+
+<div class="container">
+    <a href="proposals.html" class="back-link">← ALL PROPOSALS</a>
+
+    <!-- Proposal parameters -->
+    <section class="proposal-section reveal">
+        <div class="proposal-section-title">PARAMETERS</div>
+        <div class="spec-grid">
+            <div class="spec-item"><div class="spec-label">DATE</div><div class="spec-value">2026-06-26</div></div>
+            <div class="spec-item"><div class="spec-label">DATA SNAPSHOT</div><div class="spec-value">EPOCH 219 · TICK 62,661,077</div></div>
+            <div class="spec-item"><div class="spec-label">QEARN CONTRACT</div><div class="spec-value">INDEX 9 · JAAA…VKHO</div></div>
+            <div class="spec-item"><div class="spec-label">CONTRACT FILE</div><div class="spec-value">src/contracts/Qearn.h</div></div>
+            <div class="spec-item"><div class="spec-label">TEST FILE</div><div class="spec-value">test/contract_qearn.cpp</div></div>
+            <div class="spec-item"><div class="spec-label">COMPUTOR ALLOCATION</div><div class="spec-value ok">UNCHANGED</div></div>
+            <div class="spec-item"><div class="spec-label">ACTIVATION</div><div class="spec-value">EPOCH 221</div></div>
+            <div class="spec-item"><div class="spec-label">SCOPE</div><div class="spec-value ok">NEW LOCKS ONLY</div></div>
+            <div class="spec-item"><div class="spec-label">SAME-EPOCH UNLOCK</div><div class="spec-value bad">BLOCKED</div></div>
+        </div>
+    </section>
+
+    <!-- At-a-glance hero cards -->
+    <div class="hero-stats reveal" id="hero-stats">
+        <div class="hero-card">
+            <div class="hero-label">ALL-TIME BONUS REMOVED</div>
+            <div class="hero-value danger">906.151B</div>
+            <div class="hero-sub">paid early + burned, taken from normal distribution</div>
+        </div>
+        <div class="hero-card">
+            <div class="hero-label">2026 BONUS REMOVED</div>
+            <div class="hero-value danger">189.214B</div>
+            <div class="hero-sub">still happening this year</div>
+        </div>
+        <div class="hero-card">
+            <div class="hero-label">2026 REMOVED SHARE</div>
+            <div class="hero-value">59.8%</div>
+            <div class="hero-sub">of the impacted bonus slice</div>
+        </div>
+        <div class="hero-card">
+            <div class="hero-label">COMPLETED LOCK IMPACT</div>
+            <div class="hero-value">25.6%</div>
+            <div class="hero-sub">avg bonus gap per 1B held to maturity</div>
+        </div>
+    </div>
+
+    <!-- Bonus allocation visualization -->
+    <figure class="glide-figure reveal">
+        <figcaption class="glide-caption">WHERE 100 QUBIC OF IMPACTED 2026 BONUS GOES</figcaption>
+        <svg class="glide-chart" viewBox="0 0 900 380" role="img" aria-label="Stacked bar chart. Under current behavior, for every 100 QUBIC of impacted 2026 bonus, 21 is paid to early unlockers, 38.8 is burned, and only 40.2 stays for 52-epoch lockers. After the patch, all 100 stays for 52-epoch lockers.">
+            <defs>
+                <filter id="chartGlow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="3" result="b"/>
+                    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <clipPath id="barReveal">
+                    <rect x="60" y="30" width="820" height="300">
+                        <animate id="barAnimY" attributeName="y" from="330" to="30" dur="1.1s" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.4 0 0.2 1"/>
+                        <animate id="barAnimH" attributeName="height" from="0" to="300" dur="1.1s" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines="0.4 0 0.2 1"/>
+                    </rect>
+                </clipPath>
+            </defs>
+
+            <!-- Horizontal gridlines + Y labels (0-100) -->
+            <line class="grid-line h" x1="70" y1="30" x2="870" y2="30"/>
+            <line class="grid-line h" x1="70" y1="105" x2="870" y2="105"/>
+            <line class="grid-line h" x1="70" y1="180" x2="870" y2="180"/>
+            <line class="grid-line h" x1="70" y1="255" x2="870" y2="255"/>
+            <text class="axis-label y" x="58" y="34">100</text>
+            <text class="axis-label y" x="58" y="109">75</text>
+            <text class="axis-label y" x="58" y="184">50</text>
+            <text class="axis-label y" x="58" y="259">25</text>
+
+            <!-- Axes -->
+            <line class="axis-line" x1="70" y1="30" x2="70" y2="330"/>
+            <line class="axis-line" x1="70" y1="330" x2="870" y2="330"/>
+            <text class="axis-title" x="470" y="372">QUBIC PER 100 OF IMPACTED BONUS</text>
+
+            <!-- Column captions -->
+            <text class="bar-cap" x="310" y="352">CURRENT BEHAVIOR</text>
+            <text class="bar-cap" x="630" y="352">AFTER PATCH</text>
+
+            <!-- Bars (revealed bottom-up) -->
+            <g clip-path="url(#barReveal)">
+                <!-- CURRENT BEHAVIOR: paid 21.0 + burned 38.8 + stays 40.2 -->
+                <rect class="bar-seg bar-paid" x="225" y="30" width="170" height="63"/>
+                <rect class="bar-seg bar-burn" x="225" y="93" width="170" height="116.4"/>
+                <rect class="bar-seg bar-stay" x="225" y="209.4" width="170" height="120.6"/>
+                <!-- AFTER PATCH: stays 100 -->
+                <rect class="bar-seg bar-stay" x="545" y="30" width="170" height="300" filter="url(#chartGlow)"/>
+            </g>
+
+            <!-- Value labels (outside clip so they stay crisp) -->
+            <text class="bar-val" x="310" y="66">21.0</text>
+            <text class="bar-val" x="310" y="155">38.8</text>
+            <text class="bar-val" x="310" y="274">40.2</text>
+            <text class="bar-val" x="630" y="184">100</text>
+        </svg>
+        <div class="glide-legend">
+            <span class="lg"><span class="sw sw-paid"></span>PAID TO EARLY UNLOCKERS</span>
+            <span class="lg"><span class="sw sw-burn"></span>BURNED EARLY</span>
+            <span class="lg"><span class="sw sw-stay"></span>STAYS FOR 52-EPOCH LOCKERS</span>
+        </div>
+    </figure>
+
+    <div class="section-divider">
+        <span class="section-divider-text">FULL PROPOSAL</span>
+    </div>
+
+    <article class="proposal-detail">
+        <!-- Summary / Proposed behavior -->
+        <section class="proposal-section reveal">
+            <div class="proposal-section-title">PROPOSAL</div>
+            <p class="detail-text">Align QEarn with its 52-epoch purpose by <span class="hl-good">reserving bonus rewards for lockers who complete the intended lock period</span><br>It <span class="hl-good">leaves the QEarn computor allocation untouched</span>, the issue is the early-unlock distribution logic, not the size of QEarn funding</p>
+            <p class="detail-text">The proposed behavior is:</p>
+            <ul class="detail-list">
+                <li>The change applies only to <span class="hl">new locks from activation epoch 221</span></li>
+                <li>Locks made before activation keep their original terms</li>
+                <li>Unlocking in the same epoch as the lock is <span class="hl">blocked</span></li>
+                <li>Early unlockers receive <span class="hl">principal only</span></li>
+                <li>Early unlockers receive <span class="hl">no bonus</span></li>
+                <li>Early unlock <span class="hl">does not burn</span> the forfeited bonus slice</li>
+                <li>The forfeited bonus <span class="hl-good">remains in the round</span> for users who stay locked until maturity</li>
+                <li>Any early unlock <span class="hl">after the original lock epoch</span> exits the full position for that lock epoch</li>
+            </ul>
+        </section>
+
+        <!-- Voting Options -->
+        <section class="proposal-section reveal">
+            <div class="proposal-section-title">VOTING OPTIONS</div>
+            <div class="detail-vote-option">
+                <span class="detail-vote-num">OPTION 0</span>
+                <span class="detail-vote-text"><b class="vote-head">Keep QEarn unchanged</b>Early unlockers can still take part of the bonus pool and burn another part before 52-epoch maturity</span>
+            </div>
+            <div class="detail-vote-option proposed">
+                <span class="detail-vote-num">OPTION 1</span>
+                <span class="detail-vote-text"><span class="vote-tag">THIS PROPOSAL</span><b class="vote-head">Approve the early-unlock alignment fix</b>Prospective activation, no same-epoch unlock, principal-only early unlock, no early bonus, no early burn, and full exit after the lock epoch</span>
+            </div>
+        </section>
+
+        <!-- Computor Rationale -->
+        <section class="proposal-section reveal">
+            <div class="proposal-section-title">COMPUTOR RATIONALE</div>
+            <p class="detail-text">Computors submit this proposal because current QEarn behavior <span class="hl">conflicts with the intent of computor donations</span></p>
+            <p class="detail-text">Those donations are meant to reward the <span class="hl-good">loyalty</span> of users who lock for the full <span class="hl">52-epoch period</span>, not to subsidize a short-term strategy that recovers principal early while still draining the donated bonus pool<br>Fixing early unlocks keeps that original intent intact</p>
+            <p class="detail-text">If the behavior stays unchanged, computors may have to <span class="hl">cut QEarn donations</span> to stop funding this extraction path, shrinking the reward pool for loyal users, the exact outcome this proposal prevents</p>
+        </section>
+
+        <!-- Problem -->
+        <section class="proposal-section reveal">
+            <div class="proposal-section-title">PROBLEM</div>
+            <p class="detail-text">QEarn currently lets short-term lockers unlock before 52 epochs and <span class="hl">still take part of the reward bonus</span><br>Part of the impacted bonus is paid early, part is burned, and only the remaining part boosts users who stay</p>
+            <p class="detail-text">The boost mechanism exists and is counted in this document<br>The issue is that computor-donated bonus is not fully reserved for the completed 52-epoch commitment</p>
+        </section>
+
+        <!-- Evidence -->
+        <section class="proposal-section reveal">
+            <div class="proposal-section-title">EVIDENCE</div>
+            <p class="detail-text">Live Qubic RPC data at <span class="hl">epoch 219</span> (2026-06-26) confirms the issue is current:</p>
+            <div class="detail-table-wrap">
+                <table class="detail-table">
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th class="num col-key">Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>2026 reward-bearing early-unlock volume</td><td class="num col-key">3.131T</td></tr>
+                        <tr><td>2026 early-unlock bonus value removed</td><td class="num bad">189.214B</td></tr>
+                        <tr><td>2026 removed share of impacted bonus slice</td><td class="num bad">59.8%</td></tr>
+                        <tr><td>2026 early rewards paid</td><td class="num">66.559B</td></tr>
+                        <tr><td>2026 bonus burned</td><td class="num">122.654B</td></tr>
+                        <tr><td>All-time bonus value removed</td><td class="num bad">906.151B</td></tr>
+                        <tr><td>All-time removed share of impacted bonus slice</td><td class="num bad">56.2%</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="detail-text">The loss is <span class="hl">bonus leakage</span> from the normal 52-epoch distribution, not one wallet's loss. In 2026, early unlocks touched <span class="hl">316.430B</span> of impacted bonus and left only <span class="hl">127.216B</span> for remaining lockers, about <span class="hl">60.4B</span> removed per <span class="hl">1T</span> of early-unlock volume<br>The per-100 split is the chart at the top</p>
+        </section>
+
+        <!-- Boost / Burn Clarification -->
+        <section class="proposal-section reveal">
+            <div class="proposal-section-title">BOOST + BURN CLARIFICATION</div>
+            <p class="detail-text">This proposal does not ignore the current boost mechanism<br>In the 2026 impacted slice, about <span class="hl-good">40.2%</span> stayed as boost, while <span class="hl">21.0%</span> was paid to early unlockers and <span class="hl">38.8%</span> was burned before maturity</p>
+            <p class="detail-text">The proposed rule is simpler: if a lock does not complete 52 epochs, its bonus share is not paid early and is not burned inside QEarn, it stays reserved for completed locks</p>
+        </section>
+
+        <!-- Completed Lifecycle Simulation -->
+        <section class="proposal-section reveal">
+            <div class="proposal-section-title">COMPLETED LIFECYCLE SIMULATION</div>
+            <p class="detail-text">Step through each completed lock epoch (<span class="hl">Dec 2024 to Jun 2025</span>), each paying out at <code>lockedEpoch + 52</code><br>For an illustrative <span class="hl">1B QUBIC</span> stake held to maturity, it compares the bonus actually kept against the bonus it would keep if early-paid and early-burned value stayed in the pool</p>
+
+            <div class="sim-panel">
+            <div class="sim-slider-wrap">
+                <div class="sim-slider-head">
+                    <span class="sim-slider-label">LOCK EPOCH</span>
+                    <span class="sim-epoch" id="sim-epoch">138</span>
+                </div>
+                <input type="range" min="0" max="28" step="1" value="0" class="sim-slider" id="sim-slider" aria-label="Select lock epoch">
+                <div class="sim-ticks"><span>138</span><span>144</span><span>150</span><span>156</span><span>162</span><span>166</span></div>
+            </div>
+            <div class="sim-readout" id="sim-readout">
+                <div class="sim-readout-top">
+                    <span>LOCK START<b id="sim-start">2024-12-04</b></span>
+                    <span>PAYOUT<b id="sim-payout">E190 · 2025-12-10</b></span>
+                    <span>IMPACT<b class="bad" id="sim-impact">40.4%</b></span>
+                </div>
+                <div class="sim-yield">
+                    <div class="sim-yield-row">
+                        <span class="sim-yield-name">ACTUAL YIELD</span>
+                        <span class="sim-yield-bar"><i class="sim-bar-actual" id="sim-bar-actual" style="width:8.5%"></i></span>
+                        <span class="sim-yield-val" id="sim-actual-yield">3.064%</span>
+                    </div>
+                    <div class="sim-yield-row">
+                        <span class="sim-yield-name">FAIR-MODEL YIELD</span>
+                        <span class="sim-yield-bar"><i class="sim-bar-fair" id="sim-bar-fair" style="width:14.3%"></i></span>
+                        <span class="sim-yield-val fair" id="sim-fair-yield">5.145%</span>
+                    </div>
+                </div>
+                <div class="sim-grid">
+                    <div class="sim-stat"><span>ACTUAL BONUS / 1B</span><b id="sim-actual-bonus">30.638M</b></div>
+                    <div class="sim-stat"><span>FAIR-MODEL BONUS / 1B</span><b id="sim-fair-bonus">51.446M</b></div>
+                    <div class="sim-stat"><span>PRO-RATA IMPACT</span><b id="sim-prorata">20.809M</b></div>
+                    <div class="sim-stat"><span>CURRENT LOCKED AT PAYOUT</span><b id="sim-locked">1961.055B</b></div>
+                    <div class="sim-stat"><span>BONUS RESTORED (FAIR)</span><b id="sim-restored">40.807B</b></div>
+                </div>
+            </div>
+            </div>
+            <p class="detail-text">Across all <span class="hl">29 completed epochs</span>, a 1B stake averaged <span class="hl">128.064M</span> actual bonus versus <span class="hl-good">172.137M</span> in the fair model, an average <span class="hl">44.074M</span> lost (<span class="hl">25.6%</span>)</p>
+        </section>
+
+        <!-- Proposed Contract Change -->
+        <section class="proposal-section reveal">
+            <div class="proposal-section-title">PROPOSED CONTRACT CHANGE</div>
+            <div class="detail-table-wrap">
+                <table class="detail-table">
+                    <thead>
+                        <tr>
+                            <th>Early-unlock behavior</th>
+                            <th class="num">Now</th>
+                            <th class="num col-key">After patch</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Existing locks before activation</td><td class="num">current terms</td><td class="num col-key">unchanged</td></tr>
+                        <tr><td>Unlock during the lock epoch</td><td class="num">allowed</td><td class="num col-key">blocked</td></tr>
+                        <tr><td>Reward to the unlocker</td><td class="num">partial</td><td class="num col-key">none</td></tr>
+                        <tr><td>Bonus burned</td><td class="num">partial</td><td class="num col-key">none</td></tr>
+                        <tr><td>Unlock after the lock epoch</td><td class="num">partial</td><td class="num col-key">full exit</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="detail-text"><span class="hl">Why full exit:</span> otherwise a large locker could unlock most of a position, leave a token amount behind, and later <span class="hl-bad">recapture the preserved, now-boosted bonus</span> through the remnant</p>
+            <p class="detail-text"><span class="hl">Why same-epoch unlock is blocked:</span> otherwise a locker can enter with a large amount, affect the visible round yield, then unlock before the epoch closes</p>
+            <p class="detail-text"><span class="hl">Scope:</span> <code>src/contracts/Qearn.h</code> and <code>test/contract_qearn.cpp</code><br>The tests prove prospective activation, legacy locks unchanged, same-epoch unlock blocked, no early bonus or burn, full exit after the lock epoch, and full bonus preserved for completed locks</p>
+        </section>
+
+        <!-- Expected Outcome -->
+        <section class="proposal-section reveal">
+            <div class="proposal-section-title">EXPECTED OUTCOME</div>
+            <ul class="detail-list">
+                <li><span class="hl">Legacy terms stay:</span> users who locked before activation keep the rules they entered under</li>
+                <li><span class="hl">Liquidity stays after the lock epoch:</span> new early unlocks still return principal, but no longer pay bonus</li>
+                <li><span class="hl">No leakage:</span> new early unlocks no longer earn or burn bonus, and any post-epoch unlock is a full exit</li>
+                <li><span class="hl">Cleaner APY behavior:</span> new same-epoch unlocks cannot be used to distort a round before it closes</li>
+                <li><span class="hl-good">Loyalty pays:</span> 52-epoch lockers receive the bonus forfeited by early exits</li>
+            </ul>
+            <p class="detail-text">In one line: <span class="hl-good">bonus rewards belong to completed 52-epoch locks</span></p>
+        </section>
+
+        <!-- QEarn V2 -->
+        <section class="proposal-section reveal">
+            <div class="proposal-section-title">QEARN V2 DISCUSSION</div>
+            <p class="detail-text">A larger QEarn V2 can be discussed separately after this patch<br>That discussion could include explicit 3-month, 6-month, and 12-month products with separate reward pots, target yields, and burn rules</p>
+            <p class="detail-text">That should not be hidden inside the current early-unlock table<br>The current proposal is a narrow fix for the existing 52-epoch QEarn product</p>
+        </section>
+
+        <!-- Donation Checkpoint -->
+        <section class="proposal-section reveal">
+            <div class="proposal-section-title">DONATION CHECKPOINT</div>
+            <p class="detail-text">This proposal leaves the <span class="hl">QEarn donation unchanged</span> for now</p>
+            <p class="detail-text">After a few epochs under the patched rules, computors can review whether the 12.25% allocation is still the right level</p>
+            <ul class="detail-list">
+                <li>if yield becomes too high, donation can be reduced and the difference redirected to burn or another agreed purpose</li>
+                <li>if yield is healthy, QEarn gets a chance to prove the simpler 52-epoch model</li>
+            </ul>
+        </section>
+
+        <!-- Implementation PR -->
+        <section class="proposal-section reveal">
+            <div class="proposal-section-title">IMPLEMENTATION</div>
+            <p class="detail-text">The contract change in this proposal is implemented in Qubic Core:</p>
+            <a class="pr-link" href="https://github.com/qubic/core/pull/935" target="_blank" rel="noopener">
+                <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                <span class="pr-meta">
+                    <span class="pr-repo">qubic/core · PULL REQUEST #935</span>
+                    <span class="pr-title">QEarn: Align early unlocks with completed 52-epoch rewards</span>
+                </span>
+                <span class="pr-go">VIEW ON GITHUB →</span>
+            </a>
+        </section>
+    </article>
+</div>
+
+<!-- Footer -->
+<footer class="retro-footer">
+    &copy; 2026 jetskipool.ai
+</footer>
+
+<script>
+    // Scroll reveal for sections, cards, and the chart
+    (function() {
+        var els = document.querySelectorAll('.reveal');
+        if (!('IntersectionObserver' in window)) {
+            els.forEach(function(el) { el.classList.add('in'); });
+            return;
+        }
+        var obs = new IntersectionObserver(function(entries) {
+            entries.forEach(function(e) {
+                if (e.isIntersecting) {
+                    e.target.classList.add('in');
+                    obs.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+        els.forEach(function(el) { obs.observe(el); });
+    })();
+
+    // Sticky footer - position at bottom when page is short
+    function adjustFooter() {
+        const footer = document.querySelector('.retro-footer');
+        const bodyHeight = document.body.scrollHeight;
+        const windowHeight = window.innerHeight;
+
+        if (bodyHeight < windowHeight) {
+            footer.style.position = 'fixed';
+            footer.style.bottom = '0';
+            footer.style.left = '0';
+            footer.style.right = '0';
+        } else {
+            footer.style.position = '';
+            footer.style.bottom = '';
+            footer.style.left = '';
+            footer.style.right = '';
+        }
+    }
+
+    window.addEventListener('load', adjustFooter);
+    window.addEventListener('resize', adjustFooter);
+</script>
+<script>
+// Nav rail stats updater
+(function() {
+    function updateNavStats() {
+        fetch('pools_latest.json', { cache: 'no-cache' }).then(r => r.json()).then(d => {
+            try {
+                const price = d?.NETWORKSTATS?.data?.qubic_price_usd;
+                if (price) document.getElementById('qubic-price-nav').textContent = '$' + Number(price).toFixed(8);
+            } catch(e) {}
+            try {
+                const tick = d?.IdleStatus?.data?.tick_rate;
+                document.getElementById('tick-rate-nav').textContent = tick ? Number(tick).toFixed(1) + ' Tick/m' : '-- Tick/m';
+            } catch(e) {}
+            try {
+                const status = d?.IdleStatus?.data?.status;
+                const el = document.getElementById('mining-status-nav');
+                el.textContent = status || 'UNKNOWN';
+                el.style.color = status === 'IDLE' ? '#ff0033' : status === 'MINING' ? '#00eebb' : '';
+            } catch(e) {}
+        }).catch(() => {});
+    }
+    updateNavStats();
+    setInterval(updateNavStats, 60000);
+})();
+</script>
+<script>
+/* Page transition: load bar + overlay fade */
+(function() {
+    var bar = document.getElementById('page-load-bar');
+    var overlay = document.getElementById('page-overlay');
+    var isTransition = sessionStorage.getItem('page-transition');
+
+    if (isTransition) {
+        sessionStorage.removeItem('page-transition');
+        bar.style.width = '90%';
+        bar.style.opacity = '1';
+        bar.offsetWidth;
+        bar.style.transition = 'width 0.25s ease';
+        bar.style.width = '100%';
+        setTimeout(function() {
+            bar.style.transition = 'opacity 0.4s ease';
+            bar.style.opacity = '0';
+            overlay.classList.add('hidden');
+        }, 300);
+    } else {
+        overlay.classList.add('hidden');
+    }
+
+    document.querySelectorAll('.nav-rail-link:not(.active)').forEach(function(tab) {
+        tab.addEventListener('click', function(e) {
+            e.preventDefault();
+            var href = tab.getAttribute('href');
+            sessionStorage.setItem('page-transition', '1');
+            bar.classList.add('active');
+            var minTime = new Promise(function(r) { setTimeout(r, 400); });
+            var prefetch = fetch(href).catch(function() {});
+            Promise.all([minTime, prefetch]).then(function() {
+                window.location.href = href;
+            });
+        });
+    });
+})();
+</script>
+<script>
+/* Bar chart: hold the reveal until on screen, then pop the numbers after the bars fill */
+(function() {
+    var fig = document.querySelector('.glide-figure');
+    var chart = fig ? fig.querySelector('.glide-chart') : null;
+    if (!chart) return;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) { chart.classList.add('bars-in', 'instant'); return; } // static, fully visible
+    var clipRect = chart.querySelector('clipPath rect');
+    var animY = document.getElementById('barAnimY');
+    var animH = document.getElementById('barAnimH');
+    // JS present: collapse the bars now so they draw when the chart scrolls into view.
+    if (clipRect) { clipRect.setAttribute('y', '330'); clipRect.setAttribute('height', '0'); }
+    var done = false;
+    function reveal() {
+        if (done) return;
+        done = true;
+        try { if (animY) animY.beginElement(); if (animH) animH.beginElement(); }
+        catch (e) { if (clipRect) { clipRect.setAttribute('y', '30'); clipRect.setAttribute('height', '300'); } }
+        chart.classList.add('bars-in');
+    }
+    if (!('IntersectionObserver' in window)) { reveal(); return; }
+    var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) { if (e.isIntersecting) { reveal(); obs.disconnect(); } });
+    }, { threshold: 0.35 });
+    obs.observe(fig);
+})();
+</script>
+<script>
+/* Count-up on hero stat values when they scroll into view */
+(function() {
+    var host = document.getElementById('hero-stats');
+    if (!host) return;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var items = [].slice.call(host.querySelectorAll('.hero-value')).map(function(el) {
+        var m = /^([\d.]+)(.*)$/.exec(el.textContent.trim());
+        if (!m) return null;
+        var dec = (m[1].split('.')[1] || '').length;
+        return { el: el, target: parseFloat(m[1]), dec: dec, suffix: m[2] };
+    }).filter(Boolean);
+    if (!items.length) return;
+    function show(v, it) { it.el.textContent = v.toFixed(it.dec) + it.suffix; }
+    if (reduce) return;
+    items.forEach(function(it) { show(0, it); });
+    function run() {
+        var start = null, dur = 1300;
+        function step(ts) {
+            if (start === null) start = ts;
+            var p = Math.min(1, (ts - start) / dur);
+            var e = 1 - Math.pow(1 - p, 3);
+            items.forEach(function(it) { show(it.target * e, it); });
+            if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+    }
+    if (!('IntersectionObserver' in window)) { run(); return; }
+    var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) { if (e.isIntersecting) { run(); obs.disconnect(); } });
+    }, { threshold: 0.3 });
+    obs.observe(host);
+})();
+</script>
+<script>
+/* Lifecycle simulation slider */
+(function() {
+    var SIM = [
+        { e: 138, start: '2024-12-04', payout: 190, pd: '2025-12-10', st: 'completed', aY: 3.064, fY: 5.145, ab: '30.638M', fb: '51.446M', pr: '20.809M', lk: '1961.055B', rs: '40.807B', im: '40.4%' },
+        { e: 139, start: '2024-12-11', payout: 191, pd: '2025-12-17', st: 'completed', aY: 8.932, fY: 14.199, ab: '89.315M', fb: '141.989M', pr: '52.674M', lk: '702.838B', rs: '37.021B', im: '37.1%' },
+        { e: 140, start: '2024-12-18', payout: 192, pd: '2025-12-24', st: 'completed', aY: 6.515, fY: 9.314, ab: '65.148M', fb: '93.136M', pr: '27.988M', lk: '1074.004B', rs: '30.059B', im: '30.1%' },
+        { e: 141, start: '2024-12-25', payout: 193, pd: '2025-12-31', st: 'completed', aY: 11.182, fY: 28.536, ab: '111.823M', fb: '285.358M', pr: '173.535M', lk: '352.335B', rs: '61.142B', im: '60.8%' },
+        { e: 142, start: '2025-01-01', payout: 194, pd: '2026-01-07', st: 'completed', aY: 13.852, fY: 30.203, ab: '138.515M', fb: '302.029M', pr: '163.513M', lk: '332.408B', rs: '54.353B', im: '54.1%' },
+        { e: 143, start: '2025-01-08', payout: 195, pd: '2026-01-14', st: 'completed', aY: 14.458, fY: 15.656, ab: '144.582M', fb: '156.555M', pr: '11.973M', lk: '642.701B', rs: '7.695B', im: '7.6%' },
+        { e: 144, start: '2025-01-15', payout: 196, pd: '2026-01-21', st: 'completed', aY: 11.830, fY: 14.521, ab: '118.304M', fb: '145.212M', pr: '26.908M', lk: '693.458B', rs: '18.659B', im: '18.5%' },
+        { e: 145, start: '2025-01-22', payout: 197, pd: '2026-01-28', st: 'completed', aY: 8.522, fY: 12.389, ab: '85.215M', fb: '123.894M', pr: '38.679M', lk: '806.386B', rs: '31.190B', im: '31.2%' },
+        { e: 146, start: '2025-01-29', payout: 198, pd: '2026-02-04', st: 'completed', aY: 9.704, fY: 13.583, ab: '97.042M', fb: '135.830M', pr: '38.787M', lk: '738.983B', rs: '28.663B', im: '28.6%' },
+        { e: 147, start: '2025-02-05', payout: 199, pd: '2026-02-11', st: 'completed', aY: 10.926, fY: 12.587, ab: '109.265M', fb: '125.867M', pr: '16.602M', lk: '789.598B', rs: '13.109B', im: '13.2%' },
+        { e: 148, start: '2025-02-12', payout: 200, pd: '2026-02-18', st: 'completed', aY: 12.464, fY: 14.505, ab: '124.640M', fb: '145.050M', pr: '20.410M', lk: '683.393B', rs: '13.948B', im: '14.1%' },
+        { e: 149, start: '2025-02-19', payout: 201, pd: '2026-02-25', st: 'completed', aY: 9.807, fY: 13.588, ab: '98.070M', fb: '135.878M', pr: '37.808M', lk: '736.170B', rs: '27.833B', im: '27.8%' },
+        { e: 150, start: '2025-02-26', payout: 202, pd: '2026-03-04', st: 'completed', aY: 11.081, fY: 15.336, ab: '110.807M', fb: '153.357M', pr: '42.550M', lk: '653.934B', rs: '27.825B', im: '27.7%' },
+        { e: 151, start: '2025-03-05', payout: 203, pd: '2026-03-11', st: 'completed', aY: 11.686, fY: 14.552, ab: '116.862M', fb: '145.521M', pr: '28.660M', lk: '686.424B', rs: '19.673B', im: '19.7%' },
+        { e: 152, start: '2025-03-12', payout: 204, pd: '2026-03-18', st: 'completed', aY: 14.489, fY: 15.956, ab: '144.894M', fb: '159.559M', pr: '14.665M', lk: '632.550B', rs: '9.277B', im: '9.2%' },
+        { e: 153, start: '2025-03-19', payout: 205, pd: '2026-03-25', st: 'completed', aY: 15.085, fY: 16.166, ab: '150.848M', fb: '161.655M', pr: '10.807M', lk: '618.395B', rs: '6.683B', im: '6.7%' },
+        { e: 154, start: '2025-03-26', payout: 206, pd: '2026-04-01', st: 'completed', aY: 11.115, fY: 13.905, ab: '111.151M', fb: '139.052M', pr: '27.901M', lk: '720.433B', rs: '20.101B', im: '20.1%' },
+        { e: 155, start: '2025-04-02', payout: 207, pd: '2026-04-08', st: 'completed', aY: 13.126, fY: 13.853, ab: '131.258M', fb: '138.534M', pr: '7.277M', lk: '723.350B', rs: '5.263B', im: '5.3%' },
+        { e: 156, start: '2025-04-09', payout: 208, pd: '2026-04-15', st: 'completed', aY: 16.213, fY: 21.118, ab: '162.131M', fb: '211.185M', pr: '49.054M', lk: '475.016B', rs: '23.301B', im: '23.2%' },
+        { e: 157, start: '2025-04-16', payout: 209, pd: '2026-04-22', st: 'completed', aY: 15.886, fY: 16.282, ab: '158.858M', fb: '162.823M', pr: '3.964M', lk: '610.824B', rs: '2.422B', im: '2.4%' },
+        { e: 158, start: '2025-04-23', payout: 210, pd: '2026-04-29', st: 'completed', aY: 13.972, fY: 16.933, ab: '139.718M', fb: '169.328M', pr: '29.610M', lk: '598.093B', rs: '17.709B', im: '17.5%' },
+        { e: 159, start: '2025-04-30', payout: 211, pd: '2026-05-06', st: 'completed', aY: 17.277, fY: 19.078, ab: '172.772M', fb: '190.783M', pr: '18.011M', lk: '529.012B', rs: '9.528B', im: '9.4%' },
+        { e: 160, start: '2025-05-07', payout: 212, pd: '2026-05-13', st: 'completed', aY: 21.192, fY: 22.619, ab: '211.921M', fb: '226.190M', pr: '14.269M', lk: '446.779B', rs: '6.375B', im: '6.3%' },
+        { e: 161, start: '2025-05-14', payout: 213, pd: '2026-05-20', st: 'completed', aY: 16.000, fY: 17.873, ab: '160.004M', fb: '178.735M', pr: '18.731M', lk: '561.939B', rs: '10.526B', im: '10.5%' },
+        { e: 162, start: '2025-05-21', payout: 214, pd: '2026-05-27', st: 'completed', aY: 13.304, fY: 16.549, ab: '133.040M', fb: '165.494M', pr: '32.454M', lk: '612.892B', rs: '19.891B', im: '19.6%' },
+        { e: 163, start: '2025-05-28', payout: 215, pd: '2026-06-03', st: 'completed', aY: 17.616, fY: 29.691, ab: '176.163M', fb: '296.914M', pr: '120.751M', lk: '341.614B', rs: '41.250B', im: '40.7%' },
+        { e: 164, start: '2025-06-04', payout: 216, pd: '2026-06-10', st: 'completed', aY: 12.019, fY: 14.457, ab: '120.189M', fb: '144.572M', pr: '24.382M', lk: '625.078B', rs: '15.241B', im: '16.9%' },
+        { e: 165, start: '2025-06-11', payout: 217, pd: '2026-06-17', st: 'completed', aY: 13.192, fY: 16.053, ab: '131.917M', fb: '160.530M', pr: '28.613M', lk: '610.511B', rs: '17.468B', im: '17.8%' },
+        { e: 166, start: '2025-06-18', payout: 218, pd: '2026-06-24', st: 'completed', aY: 16.876, fY: 34.551, ab: '168.759M', fb: '345.511M', pr: '176.753M', lk: '288.408B', rs: '50.977B', im: '51.2%' }
+    ];
+    var SCALE = 36; // yield-bar width denominator (%); headroom above the 34.55% max
+    var slider = document.getElementById('sim-slider');
+    if (!slider) return;
+    function barPct(v) { return Math.max(2, Math.min(100, v / SCALE * 100)); }
+    function set(id, val) { var el = document.getElementById(id); if (el) el.textContent = val; }
+    function setW(id, w) { var el = document.getElementById(id); if (el) el.style.width = w + '%'; }
+    function render(i) {
+        var d = SIM[i];
+        if (!d) return;
+        set('sim-epoch', d.e);
+        set('sim-start', d.start);
+        set('sim-payout', 'E' + d.payout + ' · ' + d.pd);
+        set('sim-impact', d.im);
+        set('sim-actual-yield', d.aY.toFixed(3) + '%');
+        set('sim-fair-yield', d.fY.toFixed(3) + '%');
+        setW('sim-bar-actual', barPct(d.aY));
+        setW('sim-bar-fair', barPct(d.fY));
+        set('sim-actual-bonus', d.ab);
+        set('sim-fair-bonus', d.fb);
+        set('sim-prorata', d.pr);
+        set('sim-locked', d.lk);
+        set('sim-restored', d.rs);
+    }
+    slider.addEventListener('input', function() { render(parseInt(slider.value, 10) || 0); });
+    render(parseInt(slider.value, 10) || 0);
+})();
+</script>
+</body>
+</html>
