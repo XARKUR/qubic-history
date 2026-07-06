@@ -1,0 +1,48 @@
+{
+  "documents": [
+    {
+      "archivePath": "31-proposal-upgrade-qraffle-smart-contract-a469cf781b.html",
+      "canonicalUrl": "https://github.com/profitphil/Proposal-upgrade-Qraffle-smart-contract",
+      "contentType": "text/html; charset=utf-8",
+      "owner": null,
+      "path": null,
+      "proposalIndex": 31,
+      "ref": null,
+      "repo": null,
+      "sha256": "a469cf781b74033421b31fcf9532b86085ab12be7c6b7179a9920b420ce40c6c",
+      "sourceType": "html_page",
+      "status": "saved",
+      "title": "Proposal: Upgrade Qraffle Smart Contract"
+    },
+    {
+      "archivePath": "22-proposal-optimize-qvault-smart-contract-26687f4c15.html",
+      "canonicalUrl": "https://github.com/metafisicista/Proposal-Optimize-QVAULT-Smart-Contract/tree/main",
+      "contentType": "text/html; charset=utf-8",
+      "owner": null,
+      "path": null,
+      "proposalIndex": 22,
+      "ref": null,
+      "repo": null,
+      "sha256": "26687f4c154595f58c07f6a3d528e5c70ce10fbf764bc4e847da7856e9c714db",
+      "sourceType": "html_page",
+      "status": "saved",
+      "title": "Proposal-Optimize-QVAULT-Smart-Contract"
+    },
+    {
+      "archivePath": "57-extension-of-protection-for-the-qswap-contract-against-procedure-spamming-08a54d8e10.md",
+      "canonicalUrl": "https://github.com/javathon/Proposals/blob/d323fff406cdf0b760d341b378b5d88f5eff34e7/qswap-hardening.md",
+      "contentType": "application/vnd.github.raw; charset=utf-8",
+      "owner": "javathon",
+      "path": "qswap-hardening.md",
+      "proposalIndex": 57,
+      "ref": "d323fff406cdf0b760d341b378b5d88f5eff34e7",
+      "repo": "Proposals",
+      "sha256": "08a54d8e104893462603428db4a97847d396c3904c3ab0a6e9a241e629cc4d30",
+      "sourceType": "github_blob",
+      "status": "saved",
+      "title": "Extension of Protection for the QSWAP Contract against Procedure Spamming"
+    }
+  ],
+  "epoch": 213,
+  "generatedAt": "2026-07-06T18:10:57Z"
+}

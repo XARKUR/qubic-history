@@ -1,0 +1,20 @@
+{
+  "documents": [
+    {
+      "archivePath": "0-privatebin-e617078f1d.html",
+      "canonicalUrl": "https://privatebin.net/?ef2734c77701db20",
+      "contentType": "text/html; charset=UTF-8",
+      "owner": null,
+      "path": null,
+      "proposalIndex": 0,
+      "ref": null,
+      "repo": null,
+      "sha256": "e617078f1ddb382f382eabfe53b53be023772a2b0d2eff88fad4ab62da879521",
+      "sourceType": "html_page",
+      "status": "saved",
+      "title": "PrivateBin"
+    }
+  ],
+  "epoch": 211,
+  "generatedAt": "2026-07-06T18:10:57Z"
+}
