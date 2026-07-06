@@ -1,0 +1,12 @@
+{
+  "epoch": 189,
+  "files": {
+    "proposals/ballots.jsonl": "ok",
+    "proposals/documents/manifest.json": "ok",
+    "proposals/history.json": "ok",
+    "proposals/raw.json": "ok"
+  },
+  "generatedAt": "2026-07-06T18:10:56Z",
+  "schemaVersion": "qubic-history-v1",
+  "status": "complete"
+}
