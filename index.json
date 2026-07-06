@@ -211,30 +211,65 @@
       "status": "complete"
     },
     {
+      "epoch": 179,
+      "generatedAt": "2026-07-06T18:10:56Z",
+      "path": "epochs/179/manifest.json",
+      "status": "complete"
+    },
+    {
+      "epoch": 178,
+      "generatedAt": "2026-07-06T18:10:56Z",
+      "path": "epochs/178/manifest.json",
+      "status": "complete"
+    },
+    {
+      "epoch": 177,
+      "generatedAt": "2026-07-06T18:10:56Z",
+      "path": "epochs/177/manifest.json",
+      "status": "complete"
+    },
+    {
+      "epoch": 176,
+      "generatedAt": "2026-07-06T18:10:56Z",
+      "path": "epochs/176/manifest.json",
+      "status": "complete"
+    },
+    {
+      "epoch": 175,
+      "generatedAt": "2026-07-06T18:10:56Z",
+      "path": "epochs/175/manifest.json",
+      "status": "complete"
+    },
+    {
+      "commitSha": "59358c9f15b13414cf4cddd2a8145d424976518e",
       "epoch": 174,
       "generatedAt": "2026-07-06T18:10:56Z",
       "path": "epochs/174/manifest.json",
       "status": "complete"
     },
     {
+      "commitSha": "59358c9f15b13414cf4cddd2a8145d424976518e",
       "epoch": 173,
       "generatedAt": "2026-07-06T18:10:56Z",
       "path": "epochs/173/manifest.json",
       "status": "complete"
     },
     {
+      "commitSha": "59358c9f15b13414cf4cddd2a8145d424976518e",
       "epoch": 172,
       "generatedAt": "2026-07-06T18:10:56Z",
       "path": "epochs/172/manifest.json",
       "status": "complete"
     },
     {
+      "commitSha": "59358c9f15b13414cf4cddd2a8145d424976518e",
       "epoch": 171,
       "generatedAt": "2026-07-06T18:10:56Z",
       "path": "epochs/171/manifest.json",
       "status": "complete"
     },
     {
+      "commitSha": "59358c9f15b13414cf4cddd2a8145d424976518e",
       "epoch": 170,
       "generatedAt": "2026-07-06T18:10:56Z",
       "path": "epochs/170/manifest.json",
