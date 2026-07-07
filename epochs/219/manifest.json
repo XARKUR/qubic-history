@@ -1,14 +1,38 @@
 {
   "epoch": 219,
   "files": {
-    "proposals/ballots.jsonl": "ok",
-    "proposals/documents/manifest.json": "ok",
-    "proposals/history.json": "ok",
-    "proposals/raw.json": "ok",
-    "qearn/snapshot.json": "ok",
-    "qearn/unlocks.jsonl": "ok"
+    "proposals/ballots.jsonl": {
+      "sha256": "24e31953aedc6e2c5bee4d48dc9bbc3eee8e100dbb0be43cc5a4b9d3c0d12759",
+      "sizeBytes": 316166,
+      "status": "ok"
+    },
+    "proposals/documents/manifest.json": {
+      "sha256": "e4adbde23c43a87d76e14905d04a7cbe65a777670d37626783a66c56f1fecb39",
+      "sizeBytes": 1289,
+      "status": "ok"
+    },
+    "proposals/history.json": {
+      "sha256": "35050cb0933e5e0dc324aee83195e4f69dce3f728e9e28063f3b4d8304f05e3b",
+      "sizeBytes": 3031,
+      "status": "ok"
+    },
+    "proposals/raw.json": {
+      "sha256": "82effbdff39e7116852224268413c8ee1f0c982fc75ec2ab2a3579b71ae0e450",
+      "sizeBytes": 386960,
+      "status": "ok"
+    },
+    "qearn/snapshot.json": {
+      "sha256": "dde078ebe9983677beea264b5f97742c984047985ee15c465508069f74b1f960",
+      "sizeBytes": 53368,
+      "status": "ok"
+    },
+    "qearn/unlocks.jsonl": {
+      "sha256": "43951eb7227bf003819d9f152b42daff65a2c433f319f7351d5f4e45406c4c98",
+      "sizeBytes": 37532,
+      "status": "ok"
+    }
   },
-  "generatedAt": "2026-07-06T17:48:17Z",
+  "generatedAt": "2026-07-07T11:00:03Z",
   "schemaVersion": "qubic-history-v1",
   "status": "complete"
 }
