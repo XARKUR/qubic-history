@@ -7,7 +7,7 @@
       "status": "ok"
     },
     "proposals/documents/manifest.json": {
-      "sha256": "ed3906cf73917a518c93f1bc8a59895fd9f925916ee7fb69e8c82c0b72aacbf3",
+      "sha256": "e3042e2f22c0d7d16c68a8000754e3cee2a7fb6ecb829ffd010b0d4002655143",
       "sizeBytes": 1289,
       "status": "ok"
     },
@@ -22,7 +22,7 @@
       "status": "ok"
     },
     "qearn/snapshot.json": {
-      "sha256": "29863407cafc7116182d7f699410cbf1852e31fecab4592beed395acace50c6b",
+      "sha256": "1f982068ee4dfbb6d4e942bda23e076b3e33bf1e528e0550f97e7ec6fe406be0",
       "sizeBytes": 53368,
       "status": "ok"
     },
@@ -32,7 +32,7 @@
       "status": "ok"
     }
   },
-  "generatedAt": "2026-07-07T16:00:08Z",
+  "generatedAt": "2026-07-07T17:00:16Z",
   "schemaVersion": "qubic-history-v1",
   "status": "complete"
 }
