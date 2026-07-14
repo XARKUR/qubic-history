@@ -10,7 +10,7 @@
       "importance": "major",
       "status": "draft",
       "date": "2026-07-11",
-      "epoch": 221,
+      "epoch": 220,
       "chartMarker": true,
       "sources": [
         {
@@ -19,7 +19,10 @@
           "type": "official"
         }
       ],
-      "tags": ["example", "dashboard"],
+      "tags": [
+        "example",
+        "dashboard"
+      ],
       "notes": "Internal optional note. Do not rely on this field for frontend display."
     }
   ]
