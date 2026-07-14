@@ -1,5 +1,29 @@
 {
   "schemaVersion": "qubic-custom-events-v1",
-  "updatedAt": null,
-  "events": []
+  "updatedAt": "2026-07-15T00:00:00Z",
+  "events": [
+    {
+      "id": "2026-07-11-example-ecosystem-launch",
+      "title": "Example ecosystem launch event",
+      "summary": "Short factual context for an ecosystem release. This is an example only and should not be imported.",
+      "category": "ecosystem",
+      "importance": "major",
+      "status": "mining",
+      "date": "2026-07-11",
+      "epoch": 220,
+      "chartMarker": true,
+      "sources": [
+        {
+          "label": "Example source",
+          "url": "https://example.com/source",
+          "type": "official"
+        }
+      ],
+      "tags": [
+        "example",
+        "dashboard"
+      ],
+      "notes": "Internal optional note. Do not rely on this field for frontend display."
+    }
+  ]
 }
