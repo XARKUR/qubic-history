@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/XARKUR/qubic-history/custom-events/schema.json",
+  "$id": "https://github.com/XARKUR/qubic-history/events/schema.json",
   "title": "Qubic Custom Events",
   "type": "object",
   "required": ["schemaVersion", "events"],

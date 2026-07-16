@@ -1,6 +1,6 @@
-# Custom Events
+# Events
 
-`custom-events` stores manually curated Qubic ecosystem events that are not directly discoverable from on-chain data or deterministic protocol rules.
+`events` stores manually curated Qubic ecosystem events that are not directly discoverable from on-chain data or deterministic protocol rules.
 
 These events are intended to provide context for epoch-aligned charts. They must not be presented as direct causes of price movement.
 
@@ -38,10 +38,9 @@ Current categories:
 ## Recommended Backend Flow
 
 ```text
-custom-events/events.json
+events/events.json
 -> validate schema
 -> compute/validate epoch
 -> upsert custom_events by id
 -> /events/price aggregates as type = custom
 ```
-
