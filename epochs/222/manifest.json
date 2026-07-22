@@ -1,0 +1,73 @@
+{
+  "epoch": 222,
+  "files": {
+    "ipo/auctions.jsonl": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sizeBytes": 0,
+      "status": "ok"
+    },
+    "ipo/contracts.json": {
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "sizeBytes": 2,
+      "status": "ok"
+    },
+    "ipo/documents/manifest.json": {
+      "sha256": "8bf6b95d98b716942ab4e8f8cc676c3439d03babc0eb3adc6e4fc79ab0748d6d",
+      "sizeBytes": 78,
+      "status": "ok"
+    },
+    "mining/hashrate.json": {
+      "sha256": "21c1d07cce1f700e6d7f9ecfc72c48b77e704cc5697d348f73b762b821c77efc",
+      "sizeBytes": 1715933,
+      "status": "ok"
+    },
+    "mining/snapshot.json": {
+      "sha256": "8971da05326cd1d1864713a7b27a8daa5f00295c686303638140cbd0d4b720b5",
+      "sizeBytes": 3105,
+      "status": "ok"
+    },
+    "proposals/ballots.jsonl": {
+      "sha256": "7f3a3f7dcf356138eb62d357b4461305124fde9bb21b1d283ecc9feaa313236c",
+      "sizeBytes": 141757,
+      "status": "ok"
+    },
+    "proposals/documents/69-community-management-ccf-proposal-for-august-u0026-september-eeae26f025.md": {
+      "sha256": "eeae26f025a4b6031e5b6956da32681a036604578f51dfda3ca1ca5bfaeba1e2",
+      "sizeBytes": 17288,
+      "status": "ok"
+    },
+    "proposals/documents/70-qubic-ann-explorer-make-useful-proof-of-work-visible-d1b587f9d6.md": {
+      "sha256": "d1b587f9d6040c87fb8b04e42a0dedf17778773d810c83cfa06173b2480d4719",
+      "sizeBytes": 8417,
+      "status": "ok"
+    },
+    "proposals/documents/manifest.json": {
+      "sha256": "3f4bf9f9b8250c2c388c59490f3f6fb510ace9aedcb8ecb0adcec5703858c3c7",
+      "sizeBytes": 1667,
+      "status": "ok"
+    },
+    "proposals/history.json": {
+      "sha256": "5f74c2625143a676790ea4c6ebbfe108a759328cb48dded9c59620b1f72974f1",
+      "sizeBytes": 3229,
+      "status": "ok"
+    },
+    "proposals/raw.json": {
+      "sha256": "b9ce11e12a15c0ba7909e79004e9461a2ab3a93cf4020d8c958a0c279ea37e6b",
+      "sizeBytes": 182393,
+      "status": "ok"
+    },
+    "qearn/snapshot.json": {
+      "sha256": "a0a049e30755161b62c6da3bb44f6d5ef8da06992e3002903302e65d6fcfbc26",
+      "sizeBytes": 55232,
+      "status": "ok"
+    },
+    "qearn/unlocks.jsonl": {
+      "sha256": "aeb46fab5a402abbcaac01e03d421157b94a664b6ef2e4aef1b48a9b3a2f7221",
+      "sizeBytes": 83336,
+      "status": "ok"
+    }
+  },
+  "generatedAt": "2026-07-22T13:30:03Z",
+  "schemaVersion": "qubic-history-v1",
+  "status": "complete"
+}
