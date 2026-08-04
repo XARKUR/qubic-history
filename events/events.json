@@ -1,0 +1,11 @@
+{
+  "events": [
+    {
+      "title": "Example ecosystem launch event",
+      "date": "2025-08-23",
+      "summary": "Short factual context for an ecosystem release. This is an example only and should not be imported.",
+      "category": "ecosystem",
+      "url": "https://example.com/source"
+    }
+  ]
+}
