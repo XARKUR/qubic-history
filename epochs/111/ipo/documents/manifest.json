@@ -1,0 +1,21 @@
+{
+  "documents": [
+    {
+      "address": "FAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYWJB",
+      "archivePath": "5-mlm-e6b945bf99.txt",
+      "bidCount": 676,
+      "contractIndex": 5,
+      "epoch": 111,
+      "fileName": "5_mlm.txt",
+      "lastError": null,
+      "name": "MLM",
+      "sha256": "e6b945bf9920b773259953cd83311280421767331ec0fbcfa25073fab871c622",
+      "sizeBytes": 49296,
+      "sourceUrl": "https://auctions.qubic.tools/files/5_mlm.txt",
+      "status": "saved",
+      "uniqueBidderCount": 116
+    }
+  ],
+  "epoch": 111,
+  "generatedAt": "2026-08-04T21:20:15Z"
+}
