@@ -1,0 +1,21 @@
+{
+  "documents": [
+    {
+      "address": "IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABXSH",
+      "archivePath": null,
+      "bidCount": 0,
+      "contractIndex": 8,
+      "epoch": 126,
+      "fileName": "8_ccf.txt",
+      "lastError": "not_found",
+      "name": "CCF",
+      "sha256": null,
+      "sizeBytes": 0,
+      "sourceUrl": "https://auctions.qubic.tools/files/8_ccf.txt",
+      "status": "missing",
+      "uniqueBidderCount": 0
+    }
+  ],
+  "epoch": 126,
+  "generatedAt": "2026-08-04T21:20:34Z"
+}
