@@ -1,0 +1,14 @@
+[
+  {
+    "address": "CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACNKL",
+    "contractIndex": 2,
+    "detailStatus": "missing",
+    "detailUpdatedAt": "2026-08-02T16:00:08Z",
+    "epoch": 71,
+    "fileName": "2_qtry.txt",
+    "lastError": "not_found",
+    "name": "QTRY",
+    "sourceUrl": "https://auctions.qubic.tools/files/2_qtry.txt",
+    "updatedAt": "2026-08-03T19:00:04Z"
+  }
+]
