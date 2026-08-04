@@ -1,0 +1,21 @@
+{
+  "documents": [
+    {
+      "address": "BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARMID",
+      "archivePath": "1-qx-e8a83335c2.txt",
+      "bidCount": 676,
+      "contractIndex": 1,
+      "epoch": 65,
+      "fileName": "1_qx.txt",
+      "lastError": null,
+      "name": "Qx",
+      "sha256": "e8a83335c2d38e259c0c594b003cd6a0eb6f294dd223aa6fe4a92677741215b0",
+      "sizeBytes": 50730,
+      "sourceUrl": "https://auctions.qubic.tools/files/1_qx.txt",
+      "status": "saved",
+      "uniqueBidderCount": 90
+    }
+  ],
+  "epoch": 65,
+  "generatedAt": "2026-08-04T21:19:53Z"
+}
