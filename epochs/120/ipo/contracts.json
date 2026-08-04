@@ -1,0 +1,14 @@
+[
+  {
+    "address": "GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQGNM",
+    "contractIndex": 6,
+    "detailStatus": "missing",
+    "detailUpdatedAt": "2026-08-02T16:00:07Z",
+    "epoch": 120,
+    "fileName": "6_proposal.txt",
+    "lastError": "not_found",
+    "name": "Proposal",
+    "sourceUrl": "https://auctions.qubic.tools/files/6_proposal.txt",
+    "updatedAt": "2026-08-03T19:00:04Z"
+  }
+]
