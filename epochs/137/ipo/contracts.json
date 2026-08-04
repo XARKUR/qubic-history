@@ -1,0 +1,14 @@
+[
+  {
+    "address": "KAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXIUO",
+    "contractIndex": 10,
+    "detailStatus": "missing",
+    "detailUpdatedAt": "2026-08-02T16:00:03Z",
+    "epoch": 137,
+    "fileName": "10_qvault.txt",
+    "lastError": "not_found",
+    "name": "QVault",
+    "sourceUrl": "https://auctions.qubic.tools/files/10_qvault.txt",
+    "updatedAt": "2026-08-03T19:00:04Z"
+  }
+]
