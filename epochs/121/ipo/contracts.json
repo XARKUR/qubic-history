@@ -1,0 +1,14 @@
+[
+  {
+    "address": "HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHYCM",
+    "contractIndex": 7,
+    "detailStatus": "missing",
+    "detailUpdatedAt": "2026-08-02T16:00:07Z",
+    "epoch": 121,
+    "fileName": "7_supplywatcher.txt",
+    "lastError": "not_found",
+    "name": "SupplyWatcher",
+    "sourceUrl": "https://auctions.qubic.tools/files/7_supplywatcher.txt",
+    "updatedAt": "2026-08-03T19:00:04Z"
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "documents": [
+    {
+      "address": "HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHYCM",
+      "archivePath": null,
+      "bidCount": 0,
+      "contractIndex": 7,
+      "epoch": 121,
+      "fileName": "7_supplywatcher.txt",
+      "lastError": "not_found",
+      "name": "SupplyWatcher",
+      "sha256": null,
+      "sizeBytes": 0,
+      "sourceUrl": "https://auctions.qubic.tools/files/7_supplywatcher.txt",
+      "status": "missing",
+      "uniqueBidderCount": 0
+    }
+  ],
+  "epoch": 121,
+  "generatedAt": "2026-08-04T21:20:24Z"
+}
