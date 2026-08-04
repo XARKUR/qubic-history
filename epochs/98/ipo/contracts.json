@@ -1,0 +1,14 @@
+[
+  {
+    "address": "EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVWRF",
+    "contractIndex": 4,
+    "detailStatus": "missing",
+    "detailUpdatedAt": "2026-08-02T16:00:07Z",
+    "epoch": 98,
+    "fileName": "4_qutil.txt",
+    "lastError": "not_found",
+    "name": "Qutil",
+    "sourceUrl": "https://auctions.qubic.tools/files/4_qutil.txt",
+    "updatedAt": "2026-08-03T19:00:04Z"
+  }
+]

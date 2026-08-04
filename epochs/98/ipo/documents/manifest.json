@@ -1,0 +1,21 @@
+{
+  "documents": [
+    {
+      "address": "EAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVWRF",
+      "archivePath": null,
+      "bidCount": 0,
+      "contractIndex": 4,
+      "epoch": 98,
+      "fileName": "4_qutil.txt",
+      "lastError": "not_found",
+      "name": "Qutil",
+      "sha256": null,
+      "sizeBytes": 0,
+      "sourceUrl": "https://auctions.qubic.tools/files/4_qutil.txt",
+      "status": "missing",
+      "uniqueBidderCount": 0
+    }
+  ],
+  "epoch": 98,
+  "generatedAt": "2026-08-04T21:20:10Z"
+}
