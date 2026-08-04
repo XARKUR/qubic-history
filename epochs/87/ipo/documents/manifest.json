@@ -1,0 +1,21 @@
+{
+  "documents": [
+    {
+      "address": "DAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANMIG",
+      "archivePath": "3-random-cf11c16c46.txt",
+      "bidCount": 676,
+      "contractIndex": 3,
+      "epoch": 87,
+      "fileName": "3_random.txt",
+      "lastError": null,
+      "name": "RANDOM",
+      "sha256": "cf11c16c46d86d6068e58d0e4a362169dc3e6c5c6e26a7c1a472d23e04284b3f",
+      "sizeBytes": 49356,
+      "sourceUrl": "https://auctions.qubic.tools/files/3_random.txt",
+      "status": "saved",
+      "uniqueBidderCount": 71
+    }
+  ],
+  "epoch": 87,
+  "generatedAt": "2026-08-04T21:20:04Z"
+}
