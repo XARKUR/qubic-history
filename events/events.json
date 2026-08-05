@@ -6,6 +6,13 @@
       "summary": "Short factual context for an ecosystem release. This is an example only and should not be imported.",
       "category": "ecosystem",
       "url": "https://example.com/source"
+    },
+    {
+      "title": "Qubic First Having",
+      "date": "2025-08-20",
+      "summary": "Qubic experienced its first block reward halving on August 20, 2025. The total block reward was reduced from 100,000 QUBIC to 50,000 QUBIC, marking a significant milestone in the project's tokenomics evolution.",
+      "category": "protocol",
+      "url": "https://example.com/source"
     }
   ]
 }
