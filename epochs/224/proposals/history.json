@@ -1,0 +1,51 @@
+{
+  "documentStatuses": [
+    {
+      "canonicalUrl": "https://github.com/MrRoseQubic/Marketing-proposal-for-interim-period-AUG-SEPT-26-/blob/90da0bbd6327d4b4fcef9ba96b335c2b4e1a67dc/Qubic_Marketing_Proposal_Aug_Sep_2026_2.md",
+      "documentKey": "e7a4d9550c392c57aced130a99460953f5c10ee6d36482da2cc69833fb26032e",
+      "epoch": 224,
+      "error": null,
+      "httpStatus": 200,
+      "proposalId": "5ef17b24-0f7c-4d96-9025-884c55fa660f",
+      "proposalIndex": 72,
+      "published": "2026-08-01T12:21:05.13",
+      "sha256": "6c899a1ab1d65a862754d8d4e86c2fde901ddc4370293c0f34dd065149747ff8",
+      "source": "epoch_history",
+      "sourceType": "github_blob",
+      "status": "saved",
+      "title": "QUBIC MARKETING PROPOSAL"
+    }
+  ],
+  "epoch": 224,
+  "proposalCount": 1,
+  "proposals": [
+    {
+      "epoch": 224,
+      "hasVotes": true,
+      "options": [
+        {
+          "percentage": 54.42,
+          "title": "No Transfer",
+          "votes": 234
+        },
+        {
+          "percentage": 45.58,
+          "title": "Yes, send 65,512,886,523 $QUBIC",
+          "votes": 196
+        }
+      ],
+      "proposalId": "5ef17b24-0f7c-4d96-9025-884c55fa660f",
+      "proposalIndex": 72,
+      "proposalType": "Transfer",
+      "proposerIdentity": "ZVAPTANPSTIFDFHJWUWYGXWMKDFDKWIRJBCAGXXKYDYZKVOOAMHQGZBAGSPI",
+      "published": "2026-08-01T12:21:05.13",
+      "status": 4,
+      "title": "QUBIC MARKETING PROPOSAL",
+      "totalVotes": 430,
+      "url": "https://github.com/MrRoseQubic/Marketing-proposal-for-interim-period-AUG-SEPT-26-/blob/90da0bbd6327d4b4fcef9ba96b335c2b4e1a67dc/Qubic_Marketing_Proposal_Aug_Sep_2026_2.md"
+    }
+  ],
+  "source": "api.qubic.li/Voting/EpochHistory",
+  "status": "complete",
+  "updatedAt": "2026-08-05T18:00:04Z"
+}

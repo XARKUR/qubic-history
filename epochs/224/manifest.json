@@ -1,0 +1,58 @@
+{
+  "epoch": 224,
+  "files": {
+    "mining/hashrate.json": {
+      "sha256": "c91f1dd504552ec5c06109294d949749f584dad0a49b5ddc0ace5a4d320fa3a7",
+      "sizeBytes": 153835,
+      "status": "ok"
+    },
+    "mining/snapshot.json": {
+      "sha256": "c7454b073b42601fbe97fbc16b1f3c6bffdf2a235406e00c38232f9947fcce4e",
+      "sizeBytes": 3043,
+      "status": "ok"
+    },
+    "price/market.json": {
+      "sha256": "23c5716b38dbae9cd3c15be862570ed3147a3cdfc052d6c7f4aede5c4ca7d7db",
+      "sizeBytes": 513,
+      "status": "ok"
+    },
+    "proposals/ballots.jsonl": {
+      "sha256": "ebd83fd5058d78345271e87a8bf649ca74e5f5c957d15217efa59375b66e4ab2",
+      "sizeBytes": 96750,
+      "status": "ok"
+    },
+    "proposals/documents/72-qubic-marketing-proposal-6c899a1ab1.md": {
+      "sha256": "6c899a1ab1d65a862754d8d4e86c2fde901ddc4370293c0f34dd065149747ff8",
+      "sizeBytes": 5660,
+      "status": "ok"
+    },
+    "proposals/documents/manifest.json": {
+      "sha256": "9ac5f42732fa087ac8d7ef0904b6ccaafdeb6090a9e91e2e282401e6e98b7a58",
+      "sizeBytes": 941,
+      "status": "ok"
+    },
+    "proposals/history.json": {
+      "sha256": "1e7126c77443badfe2c769cb108015fadf6d0aca07d14dc4a61c6c85c3b920c6",
+      "sizeBytes": 1766,
+      "status": "ok"
+    },
+    "proposals/raw.json": {
+      "sha256": "5593bcd79156d7088b624b9c081fbe6ffe0bd5d4db060b98fe50467170666dc0",
+      "sizeBytes": 144543,
+      "status": "ok"
+    },
+    "qearn/snapshot.json": {
+      "sha256": "a729641bff753e46e3f8a851e5059658c71bc641201ffe9897f3d6b2e6291174",
+      "sizeBytes": 514,
+      "status": "ok"
+    },
+    "qearn/unlocks.jsonl": {
+      "sha256": "6225acde9573b5c426a3effde49b93c4fb6859e60ffd0d178f12649115eed902",
+      "sizeBytes": 88418,
+      "status": "ok"
+    }
+  },
+  "generatedAt": "2026-08-05T21:49:59Z",
+  "schemaVersion": "qubic-history-v2",
+  "status": "complete"
+}
