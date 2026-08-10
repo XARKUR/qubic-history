@@ -9,7 +9,7 @@
     },
     {
       "title": "Qubic First Halving (Epoch 175)",
-      "date": "2025-08-20",
+      "date": "2025-08-21",
       "summary": "Qubic's first halving took effect in Epoch 175. Gross weekly issuance remained 1 trillion QUBIC, while SupplyWatcher's maximum burn allocation increased from 100 billion to 550 billion (10% to 55%), reducing scheduled effective weekly emissions from 900 billion to 450 billion QUBIC.",
       "category": "protocol",
       "url": "https://github.com/qubic/proposal/blob/563ee56b05f2337ff30097abbdae5197ed750282/ComputorDonations/2025-07-05-Adjust-SupplyWatch-Burn-Halving.md"
