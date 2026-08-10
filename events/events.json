@@ -1,18 +1,67 @@
 {
   "events": [
     {
-      "title": "Example ecosystem launch event",
-      "date": "2025-08-23",
-      "summary": "Short factual context for an ecosystem release. This is an example only and should not be imported.",
-      "category": "ecosystem",
-      "url": "https://example.com/source"
+      "title": "Qubic Monero 51% Window Demonstration",
+      "date": "2025-08-11",
+      "summary": "Qubic deployed a selfish-mining strategy on Monero and captured 63 of 122 main-chain blocks—51.6%—in a verifiable observation window, while the campaign coincided with elevated orphan rates and deeper chain reorganizations. The experiment demonstrated Qubic's Outsourced Computation / UPoW model for directing miner hashrate toward external computational tasks.",
+      "category": "mining",
+      "url": "https://qubic.org/blog-detail/historic-takeover-complete-qubic-miners-now-secure-monero-network"
     },
     {
-      "title": "Qubic First Having",
-      "date": "2025-08-21",
-      "summary": "Qubic experienced its first block reward halving on August 20, 2025. The total block reward was reduced from 100,000 QUBIC to 50,000 QUBIC, marking a significant milestone in the project's tokenomics evolution.",
+      "title": "Qubic First Halving (Epoch 175)",
+      "date": "2025-08-20",
+      "summary": "Qubic's first halving took effect in Epoch 175. Gross weekly issuance remained 1 trillion QUBIC, while SupplyWatcher's maximum burn allocation increased from 100 billion to 550 billion (10% to 55%), reducing scheduled effective weekly emissions from 900 billion to 450 billion QUBIC.",
       "category": "protocol",
-      "url": "https://qubic.org/blog-detail/qubic-s-epoch-175-halving-proposal-a-critical-step-for-sustainability"
+      "url": "https://github.com/qubic/proposal/blob/563ee56b05f2337ff30097abbdae5197ed750282/ComputorDonations/2025-07-05-Adjust-SupplyWatch-Burn-Halving.md"
+    },
+    {
+      "title": "Oracle Machines Enter Public Mainnet Testing",
+      "date": "2026-02-11",
+      "summary": "Oracle Machines entered public testing on Qubic mainnet on February 11, 2026. Integrated with the protocol, they use a Computor quorum to finalize results and make external data available to smart contracts. Qubic reported 11,212 successful queries in its February 19 All-Hands update.",
+      "category": "protocol",
+      "url": "https://qubic.org/blog-detail/qubic-all-hands-recap-february-19-2026"
+    },
+    {
+      "title": "Dogecoin Mining Integration Enters Mainnet Phase 1",
+      "date": "2026-04-01",
+      "summary": "Qubic launched Phase 1 of its Dogecoin mining integration on mainnet on April 1, 2026. Scrypt ASICs can mine DOGE through Qubic separately from CPU/GPU Aigarth workloads. The launch began the phased transition from XMR custom mining; Qubic later reported that XMR custom mining ended on April 15.",
+      "category": "mining",
+      "url": "https://qubic.org/blog-detail/qubic-dogecoin-mining-transition-plan-april-2026"
+    },
+    {
+      "title": "Second Halving Approved (Epoch 227)",
+      "date": "2026-06-03",
+      "summary": "Computors approved the second emission-halving proposal on June 3, 2026, with activation scheduled for Epoch 227 (expected around August 19, 2026). SupplyWatcher's maximum burn allocation is set to increase from 55% to 77.5%, reducing scheduled effective weekly emissions from 450 billion to approximately 225 billion QUBIC under the approved model.",
+      "category": "protocol",
+      "url": "https://qubic.org/blog-detail/qubic-second-halving-epoch-227"
+    },
+    {
+      "title": "Alchemy Pay Fiat On-Ramp Goes Live",
+      "date": "2026-07-23",
+      "summary": "QUBIC integrated with Alchemy Pay on July 23, 2026. Users across 173 countries and regions can purchase QUBIC through more than 300 payment methods, including Apple Pay, Google Pay, bank transfers, PIX, SEPA, and UPI, with availability varying by region.",
+      "category": "ecosystem",
+      "url": "https://qubic.org/blog-detail/how-to-buy-qubic-alchemy-pay"
+    },
+    {
+      "title": "BPP-9000 Confirmed Live on Mainnet",
+      "date": "2026-08-05",
+      "summary": "Qubic confirmed on August 5, 2026, that BPP-9000 was live on mainnet in Epoch 224; Core v1.301.0, which introduced the algorithm, was released on July 29. The mining algorithm trains a ternary neural network on hourly Bitcoin price data to predict up, down, or unknown movements.",
+      "category": "mining",
+      "url": "https://x.com/_Qubic_/status/2084973656799609033"
+    },
+    {
+      "title": "QUBIC Goes Live on AEON Pay",
+      "date": "2026-08-06",
+      "summary": "QUBIC joined AEON Pay on August 6, 2026, entering its global payment network of more than 50 million merchants. Users can spend QUBIC through existing local payment rails across regions including Asia, Latin America, and Africa, expanding QUBIC's real-world payment utility.",
+      "category": "ecosystem",
+      "url": "https://qubic.org/blog-detail/qubic-aeon-pay-partnership"
+    },
+    {
+      "title": "Qubic Confirms Outsourced Computation Live on Mainnet",
+      "date": "2026-08-08",
+      "summary": "Qubic announced on August 8, 2026, that Outsourced Computation had begun processing real mainnet invocations verified by a Computor quorum. Related operations require authorization from at least 451 of 676 Computors. Together with Smart Contracts and Oracle Machines, it completes Qubic's Sense-Think-Act loop.",
+      "category": "protocol",
+      "url": "https://x.com/_Qubic_/status/2086090955115954261"
     }
   ]
 }
