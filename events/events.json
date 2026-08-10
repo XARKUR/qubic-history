@@ -1,7 +1,7 @@
 {
   "events": [
     {
-      "title": "Qubic Monero 51% Window Demonstration",
+      "title": "Qubic Monero 51%",
       "date": "2025-08-11",
       "summary": "Qubic deployed a selfish-mining strategy on Monero and captured 63 of 122 main-chain blocks—51.6%—in a verifiable observation window, while the campaign coincided with elevated orphan rates and deeper chain reorganizations. The experiment demonstrated Qubic's Outsourced Computation / UPoW model for directing miner hashrate toward external computational tasks.",
       "category": "mining",
