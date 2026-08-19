@@ -1,0 +1,113 @@
+{
+  "baseLine": {
+    "apool": {
+      "averagePoolHashrate": 3637,
+      "coverage": 0.9866,
+      "hashPerSolution": 0.0,
+      "networkTotalHashrate": 0,
+      "poolHashrate": 1216,
+      "poolHashrateSamples": 1989,
+      "poolSolutions": 0
+    },
+    "qli": {
+      "averagePoolHashrate": 625981,
+      "coverage": 0.9866,
+      "hashPerSolution": 2.1486565340363017,
+      "networkTotalHashrate": 9956870,
+      "poolHashrate": 896636,
+      "poolHashrateSamples": 1989,
+      "poolSolutions": 291336
+    }
+  },
+  "epoch": 226,
+  "epochElapsedHours": 167.9839,
+  "estimatedAverageScore": 6855.4438,
+  "estimatedEpochSolutions": 4634280,
+  "networkTotalSolutions": 4633998,
+  "pools": {
+    "apool": {
+      "coinsPerShare": 0.0,
+      "coinsPerSolution": 70551.73619202983,
+      "effectivePoolHashrate": 0,
+      "estimatedEpochSolutions": 0.0,
+      "poolSolutions": 0,
+      "poolSolutionsPerHour": 0.0,
+      "pplnsShares": 33954,
+      "pplnsSolutions": null,
+      "sharesPerSolution": 0,
+      "soloSolutions": null,
+      "sourceStatus": "ok",
+      "stale": false
+    },
+    "jetski": {
+      "coinsPerShare": 0.0,
+      "coinsPerSolution": 72119.55255185271,
+      "effectivePoolHashrate": 0,
+      "estimatedEpochSolutions": 0.0,
+      "poolSolutions": 0,
+      "poolSolutionsPerHour": 0.0,
+      "pplnsShares": 0,
+      "pplnsSolutions": null,
+      "sharesPerSolution": 0,
+      "soloSolutions": null,
+      "sourceStatus": "failed",
+      "stale": false
+    },
+    "minerlab": {
+      "coinsPerShare": 0.0,
+      "coinsPerSolution": 70551.73619202983,
+      "effectivePoolHashrate": 0,
+      "estimatedEpochSolutions": 0.0,
+      "poolSolutions": 0,
+      "poolSolutionsPerHour": 0.0,
+      "pplnsShares": 0,
+      "pplnsSolutions": 0,
+      "sharesPerSolution": 0,
+      "soloSolutions": 0,
+      "sourceStatus": "ok",
+      "stale": false
+    },
+    "qli": {
+      "coinsPerShare": 17637.934048007457,
+      "coinsPerSolution": 70551.73619202983,
+      "effectivePoolHashrate": 625981,
+      "estimatedEpochSolutions": 291363.9288,
+      "poolSolutions": 291336,
+      "poolSolutionsPerHour": 1734.3091,
+      "pplnsShares": 1335873,
+      "pplnsSolutions": 291336,
+      "sharesPerSolution": 4,
+      "soloSolutions": 0,
+      "sourceStatus": "ok",
+      "stale": false
+    }
+  },
+  "rawHashrate": {
+    "apool": {
+      "averageRawHashrate": 3637,
+      "coverage": 0.9866,
+      "rawHashrate": 1216,
+      "rawHashrateSamples": 1989
+    },
+    "jetski": {
+      "averageRawHashrate": 0,
+      "coverage": 0.0,
+      "rawHashrate": 0,
+      "rawHashrateSamples": 0
+    },
+    "minerlab": {
+      "averageRawHashrate": 6888,
+      "coverage": 0.9722,
+      "rawHashrate": 9200,
+      "rawHashrateSamples": 1960
+    },
+    "qli": {
+      "averageRawHashrate": 566346,
+      "coverage": 0.9866,
+      "rawHashrate": 614124,
+      "rawHashrateSamples": 1989
+    }
+  },
+  "solutionsPerHourCalculated": 27585,
+  "updatedAt": "2026-08-19T11:59:04Z"
+}

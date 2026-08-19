@@ -1,0 +1,51 @@
+{
+  "documentStatuses": [
+    {
+      "canonicalUrl": "https://github.com/glyphq/proposals/blob/a841594ab562710c2fb8f1e55acb9d69c1245d78/ccf_proposal_august_2026.md",
+      "documentKey": "5b95353a31772f2036bf8abe9bb0e6cf05b5dbb9adcab46c946cf09e011eaac4",
+      "epoch": 226,
+      "error": null,
+      "httpStatus": 200,
+      "proposalId": "593b21c7-6fd1-4437-a165-60ebb6dac8fc",
+      "proposalIndex": 67,
+      "published": "2026-08-15T22:10:48.363",
+      "sha256": "7db17108f63b41c85d660fdbfc16624b9e6fedcf1e82b1a027699c32da8bea6d",
+      "source": "epoch_history",
+      "sourceType": "github_blob",
+      "status": "saved",
+      "title": "Glyph: Qubic desktop wallet and application stack"
+    }
+  ],
+  "epoch": 226,
+  "proposalCount": 1,
+  "proposals": [
+    {
+      "epoch": 226,
+      "hasVotes": true,
+      "options": [
+        {
+          "percentage": 47.59,
+          "title": "No Transfer",
+          "votes": 277
+        },
+        {
+          "percentage": 52.41,
+          "title": "Yes, send 21,440,000,000 $QUBIC",
+          "votes": 305
+        }
+      ],
+      "proposalId": "593b21c7-6fd1-4437-a165-60ebb6dac8fc",
+      "proposalIndex": 67,
+      "proposalType": "Transfer",
+      "proposerIdentity": "KGLUEQQRUOVFJCVIVNUXHPOXEOZBIWJPNHOQLCGOCANUYMXXCUBCGOUFNDXM",
+      "published": "2026-08-15T22:10:48.363",
+      "status": 3,
+      "title": "Glyph: Qubic desktop wallet and application stack",
+      "totalVotes": 582,
+      "url": "https://github.com/glyphq/proposals/blob/a841594ab562710c2fb8f1e55acb9d69c1245d78/ccf_proposal_august_2026.md"
+    }
+  ],
+  "source": "api.qubic.li/Voting/EpochHistory",
+  "status": "complete",
+  "updatedAt": "2026-08-19T18:00:32Z"
+}

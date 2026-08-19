@@ -47,8 +47,8 @@
       "status": "ok"
     },
     "qearn/snapshot.json": {
-      "sha256": "f3431a6f680efe587bc0bba85feb9f18922c1b277833cc3c0263f7186ff2074e",
-      "sizeBytes": 544,
+      "sha256": "994ecaef637966de1c9591c83560e1ebd90b4fe415bfd48c5630cade99f320f2",
+      "sizeBytes": 545,
       "status": "ok"
     },
     "qearn/unlocks.jsonl": {

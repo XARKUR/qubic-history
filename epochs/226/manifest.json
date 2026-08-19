@@ -1,0 +1,58 @@
+{
+  "epoch": 226,
+  "files": {
+    "mining/hashrate.json": {
+      "sha256": "b5201bc388866e97df447c730bbec629c9c4a29a00e1b0cb8582069c5bba446f",
+      "sizeBytes": 1259635,
+      "status": "ok"
+    },
+    "mining/snapshot.json": {
+      "sha256": "5c00100183b9c7e4f74abd561ba05d810bd15514d1b932c5d4762a119b8e70ce",
+      "sizeBytes": 2967,
+      "status": "ok"
+    },
+    "price/market.json": {
+      "sha256": "78d095a4ad362d1a48a3ef538c138aa39bec38e6d4c7fe0952a500472b54678b",
+      "sizeBytes": 512,
+      "status": "ok"
+    },
+    "proposals/ballots.jsonl": {
+      "sha256": "825a14f8c64ace8557b0154168d9532a2568bed748472d792bb703a699947b12",
+      "sizeBytes": 145500,
+      "status": "ok"
+    },
+    "proposals/documents/67-glyph-qubic-desktop-wallet-and-application-stack-7db17108f6.md": {
+      "sha256": "7db17108f63b41c85d660fdbfc16624b9e6fedcf1e82b1a027699c32da8bea6d",
+      "sizeBytes": 15489,
+      "status": "ok"
+    },
+    "proposals/documents/manifest.json": {
+      "sha256": "ee1147f432e3f5f21ef270723d1cfaa617ee732b052620b908136fba85086cf1",
+      "sizeBytes": 868,
+      "status": "ok"
+    },
+    "proposals/history.json": {
+      "sha256": "9734168b22e7e8ccde04518b79e95973ccab63c529cecc7950c3185191d38b83",
+      "sizeBytes": 1696,
+      "status": "ok"
+    },
+    "proposals/raw.json": {
+      "sha256": "ae31d7f48ed3db3179e4313077ebafef9067eb32a8a40464846fc1a36ed72d6f",
+      "sizeBytes": 194972,
+      "status": "ok"
+    },
+    "qearn/snapshot.json": {
+      "sha256": "88a74598ca4cb290a2975ba8f1093bed700e2d1019d77442304e45040dd53129",
+      "sizeBytes": 513,
+      "status": "ok"
+    },
+    "qearn/unlocks.jsonl": {
+      "sha256": "788fabce681096f5f2f08af46e119d7367f002b6427fad83bfb3b4468ef88b48",
+      "sizeBytes": 76078,
+      "status": "ok"
+    }
+  },
+  "generatedAt": "2026-08-19T23:50:39Z",
+  "schemaVersion": "qubic-history-v2",
+  "status": "complete"
+}

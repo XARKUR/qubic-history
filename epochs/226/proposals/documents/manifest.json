@@ -1,0 +1,21 @@
+{
+  "documents": [
+    {
+      "archivePath": "67-glyph-qubic-desktop-wallet-and-application-stack-7db17108f6.md",
+      "canonicalUrl": "https://github.com/glyphq/proposals/blob/a841594ab562710c2fb8f1e55acb9d69c1245d78/ccf_proposal_august_2026.md",
+      "contentType": "application/vnd.github.raw; charset=utf-8",
+      "expectedSha256": "7db17108f63b41c85d660fdbfc16624b9e6fedcf1e82b1a027699c32da8bea6d",
+      "owner": "glyphq",
+      "path": "ccf_proposal_august_2026.md",
+      "proposalIndex": 67,
+      "ref": "a841594ab562710c2fb8f1e55acb9d69c1245d78",
+      "repo": "proposals",
+      "sha256": "7db17108f63b41c85d660fdbfc16624b9e6fedcf1e82b1a027699c32da8bea6d",
+      "sourceType": "github_blob",
+      "status": "saved",
+      "title": "Glyph: Qubic desktop wallet and application stack"
+    }
+  ],
+  "epoch": 226,
+  "generatedAt": "2026-08-19T23:50:39Z"
+}
