@@ -1,0 +1,251 @@
+{
+  "documentStatuses": [
+    {
+      "canonicalUrl": "https://github.com/jtskxx/proposal/blob/a89a9083ba4e6076ed1e5266bbadc42ace1b2ab7/GeneralComputorProposals/Qubic-Fair-Separation-and-Equal-Access-Proposal.md",
+      "documentKey": "ffde43988026ae941fd80ecfef334f62b1e6ff387dd98e0f9de90e9c1d5923f3",
+      "epoch": 227,
+      "error": null,
+      "httpStatus": 200,
+      "proposalId": "96d004f8-e48e-489b-b9fe-1d165898e230",
+      "proposalIndex": 41,
+      "published": "2026-08-23T01:03:20.013",
+      "sha256": "6ad36cece9e9441e7d5504c5b31356d5da8671cf0c3dc3e404ec6175397c63a4",
+      "source": "epoch_history",
+      "sourceType": "github_blob",
+      "status": "saved",
+      "title": "Qubic Fair Separation and Equal Access Proposal"
+    },
+    {
+      "canonicalUrl": "https://github.com/profitphil/proposal/blob/main/SmartContracts/2026-08-21-qraffle_upgrade_proposal.md",
+      "documentKey": "aa8d6f63e4ee046163dde2c051946de30273b458cb966e3865485f6babc8ef9d",
+      "epoch": 227,
+      "error": null,
+      "httpStatus": 200,
+      "proposalId": "5d45155e-a13a-41dc-80c5-96b6c066847a",
+      "proposalIndex": 40,
+      "published": "2026-08-22T22:36:02.77",
+      "sha256": "4970b81799b4ba05fc58361acae530377ccb36e42449c2d8a936cce7d3884bce",
+      "source": "epoch_history",
+      "sourceType": "github_blob",
+      "status": "saved",
+      "title": "Proposal: Upgrade Qraffle Smart Contract"
+    },
+    {
+      "canonicalUrl": "https://github.com/profitphil/proposal/blob/main/SmartContracts/2026-08-21-qraffle_upgrade_proposal.md",
+      "documentKey": "aa8d6f63e4ee046163dde2c051946de30273b458cb966e3865485f6babc8ef9d",
+      "epoch": 227,
+      "error": null,
+      "httpStatus": 200,
+      "proposalId": "1596bf16-0f81-4631-a463-5a217ebb8f3f",
+      "proposalIndex": 39,
+      "published": "2026-08-22T22:32:28.787",
+      "sha256": "4970b81799b4ba05fc58361acae530377ccb36e42449c2d8a936cce7d3884bce",
+      "source": "epoch_history",
+      "sourceType": "github_blob",
+      "status": "saved",
+      "title": "Proposal: Upgrade Qraffle Smart Contract"
+    },
+    {
+      "canonicalUrl": "https://github.com/profitphil/proposal/blob/main/SmartContracts/2026-08-21-qraffle_upgrade_proposal.md",
+      "documentKey": "aa8d6f63e4ee046163dde2c051946de30273b458cb966e3865485f6babc8ef9d",
+      "epoch": 227,
+      "error": null,
+      "httpStatus": 200,
+      "proposalId": "25c09221-f885-42d1-aad7-46863401d8d0",
+      "proposalIndex": 39,
+      "published": "2026-08-22T22:31:35.167",
+      "sha256": "4970b81799b4ba05fc58361acae530377ccb36e42449c2d8a936cce7d3884bce",
+      "source": "epoch_history",
+      "sourceType": "github_blob",
+      "status": "saved",
+      "title": "Proposal: Upgrade Qraffle Smart Contract"
+    },
+    {
+      "canonicalUrl": "https://github.com/MrRoseQubic/Marketing-proposal-for-interim-period-AUG-SEPT-26-/blob/f912c04/Qubic_Marketing_Proposal_Aug_Oct_2026.md",
+      "documentKey": "3ab9ed5724ad324c1353ad8646d725b99170a3d20d4eb82030736f2e553ec431",
+      "epoch": 227,
+      "error": null,
+      "httpStatus": 200,
+      "proposalId": "e23affe0-5cb7-4f87-93ad-09ea80812a83",
+      "proposalIndex": 2,
+      "published": "2026-08-22T13:05:46.06",
+      "sha256": "3573dd9cae6dac81f7b9f95d550af9080a783305b62ca8f66cbced4ab2bc9928",
+      "source": "epoch_history",
+      "sourceType": "github_blob",
+      "status": "saved",
+      "title": "🌐 QUBIC MARKETING PROPOSAL — Qubic Marketing Team"
+    },
+    {
+      "canonicalUrl": "https://github.com/MrRoseQubic/Marketing-proposal-for-interim-period-AUG-SEPT-26-/blob/f912c04/Qubic_Agency_Value_Added_Services_Proposal.md",
+      "documentKey": "a31164f107aa51710668b82f1eaf49aba09678ba4ce51d595589dd1f60ceb731",
+      "epoch": 227,
+      "error": null,
+      "httpStatus": 200,
+      "proposalId": "aa817af6-0812-42f7-b38f-f0edf03057e7",
+      "proposalIndex": 67,
+      "published": "2026-08-22T13:05:04.87",
+      "sha256": "820a2dc72bdde5ca56dbb3e1787752a9ff19aa65c48e25333fd0e83c619be9b7",
+      "source": "epoch_history",
+      "sourceType": "github_blob",
+      "status": "saved",
+      "title": "🌐 QUBIC MARKETING PROPOSAL — Agency Value-Added Marketing Services"
+    }
+  ],
+  "epoch": 227,
+  "proposalCount": 6,
+  "proposals": [
+    {
+      "epoch": 227,
+      "hasVotes": false,
+      "options": [
+        {
+          "percentage": 0.0,
+          "title": "No",
+          "votes": 0
+        },
+        {
+          "percentage": 0.0,
+          "title": "Yes",
+          "votes": 0
+        }
+      ],
+      "proposalId": "96d004f8-e48e-489b-b9fe-1d165898e230",
+      "proposalIndex": 41,
+      "proposalType": "GeneralOptions",
+      "proposerIdentity": "GSBQNPHPOLVFYCZHRIBQWLBYVAMDJBXWLCJLRBVFODWBORNWOQDTRKIDVNFL",
+      "published": "2026-08-23T01:03:20.013",
+      "status": 4,
+      "title": "Qubic Fair Separation and Equal Access Proposal",
+      "totalVotes": 0,
+      "url": "https://github.com/jtskxx/proposal/blob/a89a9083ba4e6076ed1e5266bbadc42ace1b2ab7/GeneralComputorProposals/Qubic-Fair-Separation-and-Equal-Access-Proposal.md"
+    },
+    {
+      "epoch": 227,
+      "hasVotes": false,
+      "options": [
+        {
+          "percentage": 0.0,
+          "title": "No",
+          "votes": 0
+        },
+        {
+          "percentage": 0.0,
+          "title": "Yes",
+          "votes": 0
+        }
+      ],
+      "proposalId": "5d45155e-a13a-41dc-80c5-96b6c066847a",
+      "proposalIndex": 40,
+      "proposalType": "GeneralOptions",
+      "proposerIdentity": "ZIRTPAKYBOOYLEAPTQOXLADKJTICELXRAKTPTZXGLFYVDARFMVUWBZLAZYBI",
+      "published": "2026-08-22T22:36:02.77",
+      "status": 5,
+      "title": "Proposal: Upgrade Qraffle Smart Contract",
+      "totalVotes": 0,
+      "url": "https://github.com/profitphil/proposal/blob/main/SmartContracts/2026-08-21-qraffle_upgrade_proposal.md"
+    },
+    {
+      "epoch": 227,
+      "hasVotes": true,
+      "options": [
+        {
+          "percentage": 0.15,
+          "title": "No",
+          "votes": 1
+        },
+        {
+          "percentage": 99.85,
+          "title": "Yes",
+          "votes": 648
+        }
+      ],
+      "proposalId": "1596bf16-0f81-4631-a463-5a217ebb8f3f",
+      "proposalIndex": 39,
+      "proposalType": "GeneralOptions",
+      "proposerIdentity": "ZPPUEXUYEYGZCHLBOPLAZBUJIDUBDPSAHZCJYQXGEDZYIJSOUXRTOLPAZSVO",
+      "published": "2026-08-22T22:32:28.787",
+      "status": 3,
+      "title": "Proposal: Upgrade Qraffle Smart Contract",
+      "totalVotes": 649,
+      "url": "https://github.com/profitphil/proposal/blob/main/SmartContracts/2026-08-21-qraffle_upgrade_proposal.md"
+    },
+    {
+      "epoch": 227,
+      "hasVotes": false,
+      "options": [
+        {
+          "percentage": 0.0,
+          "title": "No",
+          "votes": 0
+        },
+        {
+          "percentage": 0.0,
+          "title": "Yes",
+          "votes": 0
+        }
+      ],
+      "proposalId": "25c09221-f885-42d1-aad7-46863401d8d0",
+      "proposalIndex": 39,
+      "proposalType": "GeneralOptions",
+      "proposerIdentity": "ZPPUEXUYEYGZCHLBOPLAZBUJIDUBDPSAHZCJYQXGEDZYIJSOUXRTOLPAZSVO",
+      "published": "2026-08-22T22:31:35.167",
+      "status": 5,
+      "title": "Proposal: Upgrade Qraffle Smart Contract",
+      "totalVotes": 0,
+      "url": "https://github.com/profitphil/proposal/blob/main/SmartContracts/2026-08-21-qraffle_upgrade_proposal.md"
+    },
+    {
+      "epoch": 227,
+      "hasVotes": true,
+      "options": [
+        {
+          "percentage": 45.62,
+          "title": "No Transfer",
+          "votes": 307
+        },
+        {
+          "percentage": 54.38,
+          "title": "Yes, send 59,366,666,667 $QUBIC",
+          "votes": 366
+        }
+      ],
+      "proposalId": "e23affe0-5cb7-4f87-93ad-09ea80812a83",
+      "proposalIndex": 2,
+      "proposalType": "Transfer",
+      "proposerIdentity": "TTVGKPIMQTGWDFRNQPAZWJDDHGADFXLPASJGQYIPTDVVVBYMBWGXLHNFRVRD",
+      "published": "2026-08-22T13:05:46.06",
+      "status": 3,
+      "title": "🌐 QUBIC MARKETING PROPOSAL — Qubic Marketing Team",
+      "totalVotes": 673,
+      "url": "https://github.com/MrRoseQubic/Marketing-proposal-for-interim-period-AUG-SEPT-26-/blob/f912c04/Qubic_Marketing_Proposal_Aug_Oct_2026.md"
+    },
+    {
+      "epoch": 227,
+      "hasVotes": true,
+      "options": [
+        {
+          "percentage": 53.25,
+          "title": "No Transfer",
+          "votes": 360
+        },
+        {
+          "percentage": 46.75,
+          "title": "Yes, send 13,333,333,333 $QUBIC",
+          "votes": 316
+        }
+      ],
+      "proposalId": "aa817af6-0812-42f7-b38f-f0edf03057e7",
+      "proposalIndex": 67,
+      "proposalType": "Transfer",
+      "proposerIdentity": "KGLUEQQRUOVFJCVIVNUXHPOXEOZBIWJPNHOQLCGOCANUYMXXCUBCGOUFNDXM",
+      "published": "2026-08-22T13:05:04.87",
+      "status": 6,
+      "title": "🌐 QUBIC MARKETING PROPOSAL — Agency Value-Added Marketing Services",
+      "totalVotes": 676,
+      "url": "https://github.com/MrRoseQubic/Marketing-proposal-for-interim-period-AUG-SEPT-26-/blob/f912c04/Qubic_Agency_Value_Added_Services_Proposal.md"
+    }
+  ],
+  "source": "api.qubic.li/Voting/EpochHistory",
+  "status": "complete",
+  "updatedAt": "2026-08-26T18:01:10Z"
+}

@@ -1,0 +1,73 @@
+{
+  "epoch": 227,
+  "files": {
+    "mining/hashrate.json": {
+      "sha256": "ffdf7dc9adcd060d4a189d3470f91e052d034618cde00c2e6b4392b8e69676a3",
+      "sizeBytes": 1248123,
+      "status": "ok"
+    },
+    "mining/snapshot.json": {
+      "sha256": "7361dec1c51915b335fb01bbd066b46ae90718415a8020e8a5fe434a3cfc0def",
+      "sizeBytes": 3012,
+      "status": "ok"
+    },
+    "price/market.json": {
+      "sha256": "6df01b926929c13a76e6f90c1edb1d97d46f6a7f99045e0fb066d6d133e91875",
+      "sizeBytes": 512,
+      "status": "ok"
+    },
+    "proposals/ballots.jsonl": {
+      "sha256": "13970de6ac3f7a5c50bd0ec2a245e59d87d9a27ec199d3869b8a6b2dc1b8e138",
+      "sizeBytes": 511223,
+      "status": "ok"
+    },
+    "proposals/documents/2-qubic-marketing-proposal-qubic-marketing-team-3573dd9cae.md": {
+      "sha256": "3573dd9cae6dac81f7b9f95d550af9080a783305b62ca8f66cbced4ab2bc9928",
+      "sizeBytes": 6579,
+      "status": "ok"
+    },
+    "proposals/documents/40-proposal-upgrade-qraffle-smart-contract-4970b81799.md": {
+      "sha256": "4970b81799b4ba05fc58361acae530377ccb36e42449c2d8a936cce7d3884bce",
+      "sizeBytes": 2258,
+      "status": "ok"
+    },
+    "proposals/documents/41-qubic-fair-separation-and-equal-access-proposal-6ad36cece9.md": {
+      "sha256": "6ad36cece9e9441e7d5504c5b31356d5da8671cf0c3dc3e404ec6175397c63a4",
+      "sizeBytes": 6553,
+      "status": "ok"
+    },
+    "proposals/documents/67-qubic-marketing-proposal-agency-value-added-marketing-services-820a2dc72b.md": {
+      "sha256": "820a2dc72bdde5ca56dbb3e1787752a9ff19aa65c48e25333fd0e83c619be9b7",
+      "sizeBytes": 11990,
+      "status": "ok"
+    },
+    "proposals/documents/manifest.json": {
+      "sha256": "9952bb0d77c1cb893eaa25fea891450e40ebdfde78fcec021ff7f79596454894",
+      "sizeBytes": 3441,
+      "status": "ok"
+    },
+    "proposals/history.json": {
+      "sha256": "6a7f202dc40d3d688f1c6a22e332122d98428f7fbd1e4431adfc48c2398a2f40",
+      "sizeBytes": 9176,
+      "status": "ok"
+    },
+    "proposals/raw.json": {
+      "sha256": "f5642247ada4b7e67c67f970f0b2f7e507dbf051e0064e9e6658845183715fb9",
+      "sizeBytes": 672563,
+      "status": "ok"
+    },
+    "qearn/snapshot.json": {
+      "sha256": "c9ca4d8de6b3fb2b0c530ff37568bcee0e410fc244b8d3257c35f370c1bbaa6a",
+      "sizeBytes": 512,
+      "status": "ok"
+    },
+    "qearn/unlocks.jsonl": {
+      "sha256": "37d4014cc40a53cb515e48477af643b7b3007049e88a5bb1dff58421a0ef8751",
+      "sizeBytes": 92470,
+      "status": "ok"
+    }
+  },
+  "generatedAt": "2026-08-26T23:50:47Z",
+  "schemaVersion": "qubic-history-v2",
+  "status": "complete"
+}

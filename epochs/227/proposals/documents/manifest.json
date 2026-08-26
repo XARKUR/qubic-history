@@ -1,0 +1,66 @@
+{
+  "documents": [
+    {
+      "archivePath": "2-qubic-marketing-proposal-qubic-marketing-team-3573dd9cae.md",
+      "canonicalUrl": "https://github.com/MrRoseQubic/Marketing-proposal-for-interim-period-AUG-SEPT-26-/blob/f912c04/Qubic_Marketing_Proposal_Aug_Oct_2026.md",
+      "contentType": "application/vnd.github.raw; charset=utf-8",
+      "expectedSha256": "3573dd9cae6dac81f7b9f95d550af9080a783305b62ca8f66cbced4ab2bc9928",
+      "owner": "MrRoseQubic",
+      "path": "Qubic_Marketing_Proposal_Aug_Oct_2026.md",
+      "proposalIndex": 2,
+      "ref": "f912c04",
+      "repo": "Marketing-proposal-for-interim-period-AUG-SEPT-26-",
+      "sha256": "3573dd9cae6dac81f7b9f95d550af9080a783305b62ca8f66cbced4ab2bc9928",
+      "sourceType": "github_blob",
+      "status": "saved",
+      "title": "🌐 QUBIC MARKETING PROPOSAL — Qubic Marketing Team"
+    },
+    {
+      "archivePath": "67-qubic-marketing-proposal-agency-value-added-marketing-services-820a2dc72b.md",
+      "canonicalUrl": "https://github.com/MrRoseQubic/Marketing-proposal-for-interim-period-AUG-SEPT-26-/blob/f912c04/Qubic_Agency_Value_Added_Services_Proposal.md",
+      "contentType": "application/vnd.github.raw; charset=utf-8",
+      "expectedSha256": "820a2dc72bdde5ca56dbb3e1787752a9ff19aa65c48e25333fd0e83c619be9b7",
+      "owner": "MrRoseQubic",
+      "path": "Qubic_Agency_Value_Added_Services_Proposal.md",
+      "proposalIndex": 67,
+      "ref": "f912c04",
+      "repo": "Marketing-proposal-for-interim-period-AUG-SEPT-26-",
+      "sha256": "820a2dc72bdde5ca56dbb3e1787752a9ff19aa65c48e25333fd0e83c619be9b7",
+      "sourceType": "github_blob",
+      "status": "saved",
+      "title": "🌐 QUBIC MARKETING PROPOSAL — Agency Value-Added Marketing Services"
+    },
+    {
+      "archivePath": "40-proposal-upgrade-qraffle-smart-contract-4970b81799.md",
+      "canonicalUrl": "https://github.com/profitphil/proposal/blob/main/SmartContracts/2026-08-21-qraffle_upgrade_proposal.md",
+      "contentType": "application/vnd.github.raw; charset=utf-8",
+      "expectedSha256": "4970b81799b4ba05fc58361acae530377ccb36e42449c2d8a936cce7d3884bce",
+      "owner": "profitphil",
+      "path": "SmartContracts/2026-08-21-qraffle_upgrade_proposal.md",
+      "proposalIndex": 40,
+      "ref": "main",
+      "repo": "proposal",
+      "sha256": "4970b81799b4ba05fc58361acae530377ccb36e42449c2d8a936cce7d3884bce",
+      "sourceType": "github_blob",
+      "status": "saved",
+      "title": "Proposal: Upgrade Qraffle Smart Contract"
+    },
+    {
+      "archivePath": "41-qubic-fair-separation-and-equal-access-proposal-6ad36cece9.md",
+      "canonicalUrl": "https://github.com/jtskxx/proposal/blob/a89a9083ba4e6076ed1e5266bbadc42ace1b2ab7/GeneralComputorProposals/Qubic-Fair-Separation-and-Equal-Access-Proposal.md",
+      "contentType": "application/vnd.github.raw; charset=utf-8",
+      "expectedSha256": "6ad36cece9e9441e7d5504c5b31356d5da8671cf0c3dc3e404ec6175397c63a4",
+      "owner": "jtskxx",
+      "path": "GeneralComputorProposals/Qubic-Fair-Separation-and-Equal-Access-Proposal.md",
+      "proposalIndex": 41,
+      "ref": "a89a9083ba4e6076ed1e5266bbadc42ace1b2ab7",
+      "repo": "proposal",
+      "sha256": "6ad36cece9e9441e7d5504c5b31356d5da8671cf0c3dc3e404ec6175397c63a4",
+      "sourceType": "github_blob",
+      "status": "saved",
+      "title": "Qubic Fair Separation and Equal Access Proposal"
+    }
+  ],
+  "epoch": 227,
+  "generatedAt": "2026-08-26T23:50:47Z"
+}
