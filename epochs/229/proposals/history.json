@@ -1,0 +1,131 @@
+{
+  "documentStatuses": [
+    {
+      "canonicalUrl": "https://github.com/qubicsci/Proposals/blob/93c3eea/QubicScienceEA2026.md",
+      "documentKey": "f25ea8782666a593a223f76612fb90429704d60d387665f0c28c9fd073dd04f6",
+      "epoch": 229,
+      "error": null,
+      "httpStatus": 200,
+      "proposalId": "85b4ba90-24af-4392-ae98-909c7dba4eb7",
+      "proposalIndex": 73,
+      "published": "2026-09-05T07:25:16.627",
+      "sha256": "89e2a973e137fab2ed0011afee216912fe33a91e44acc6ed901d8d1d7a1ec5e7",
+      "source": "epoch_history",
+      "sourceType": "github_blob",
+      "status": "saved",
+      "title": "QUBIC SCIENCE NEURAXON - Artificial Evolution 2026"
+    },
+    {
+      "canonicalUrl": "https://github.com/qubicsci/Proposals/blob/56fd1b8/QubicScience2026-Q4.md",
+      "documentKey": "9d212aa08ddd85f3758131ff84559d9a784c7e198394bda15e374d4a90c4a40c",
+      "epoch": 229,
+      "error": null,
+      "httpStatus": 200,
+      "proposalId": "1a81c9c5-4539-42f8-91d4-42d5768e37ef",
+      "proposalIndex": 67,
+      "published": "2026-09-05T07:24:48.933",
+      "sha256": "76100c8d2322c6e6a36375d21156e79dff66a714dc9e36dba696a1625b59f7f4",
+      "source": "epoch_history",
+      "sourceType": "github_blob",
+      "status": "saved",
+      "title": "QUBIC AGI (True AI) Research 2026 Q4"
+    },
+    {
+      "canonicalUrl": "https://github.com/qubic/proposal/blob/6338fa6cbd09f8c94ab792e1eb5d08afe66d1a97/SmartContracts/2026-08-29-QPayhub.md",
+      "documentKey": "4249b4918c3dbc40582494a0a5bad8684d599a7d726e749d7d12c9e7beeace98",
+      "epoch": 229,
+      "error": null,
+      "httpStatus": 200,
+      "proposalId": "f7a91f1c-7882-458b-8da9-18cbcf852b85",
+      "proposalIndex": 40,
+      "published": "2026-09-03T17:27:16.93",
+      "sha256": "92370a6510fe24295465f9974f8ad83e9849817d2df664a83dd9ec576b350472",
+      "source": "epoch_history",
+      "sourceType": "github_blob",
+      "status": "saved",
+      "title": "Smart Contract - Qubic Payment Hub (QPAY)"
+    }
+  ],
+  "epoch": 229,
+  "proposalCount": 3,
+  "proposals": [
+    {
+      "epoch": 229,
+      "hasVotes": true,
+      "options": [
+        {
+          "percentage": 30.67,
+          "title": "No Transfer",
+          "votes": 200
+        },
+        {
+          "percentage": 69.33,
+          "title": "Yes, send 10,400,000,000 $QUBIC",
+          "votes": 452
+        }
+      ],
+      "proposalId": "85b4ba90-24af-4392-ae98-909c7dba4eb7",
+      "proposalIndex": 73,
+      "proposalType": "Transfer",
+      "proposerIdentity": "PTXKGDSPQNDTBFRNLTRPKVZAEEMCWFBUBSMDYKMYSBYMYHJWLHURNIFFZSPF",
+      "published": "2026-09-05T07:25:16.627",
+      "status": 3,
+      "title": "QUBIC SCIENCE NEURAXON - Artificial Evolution 2026",
+      "totalVotes": 652,
+      "url": "https://github.com/qubicsci/Proposals/blob/93c3eea/QubicScienceEA2026.md"
+    },
+    {
+      "epoch": 229,
+      "hasVotes": true,
+      "options": [
+        {
+          "percentage": 36.5,
+          "title": "No Transfer",
+          "votes": 238
+        },
+        {
+          "percentage": 63.5,
+          "title": "Yes, send 139,400,000,000 $QUBIC",
+          "votes": 414
+        }
+      ],
+      "proposalId": "1a81c9c5-4539-42f8-91d4-42d5768e37ef",
+      "proposalIndex": 67,
+      "proposalType": "Transfer",
+      "proposerIdentity": "KGLUEQQRUOVFJCVIVNUXHPOXEOZBIWJPNHOQLCGOCANUYMXXCUBCGOUFNDXM",
+      "published": "2026-09-05T07:24:48.933",
+      "status": 3,
+      "title": "QUBIC AGI (True AI) Research 2026 Q4",
+      "totalVotes": 652,
+      "url": "https://github.com/qubicsci/Proposals/blob/56fd1b8/QubicScience2026-Q4.md"
+    },
+    {
+      "epoch": 229,
+      "hasVotes": true,
+      "options": [
+        {
+          "percentage": 7.52,
+          "title": "No",
+          "votes": 49
+        },
+        {
+          "percentage": 92.48,
+          "title": "Yes",
+          "votes": 603
+        }
+      ],
+      "proposalId": "f7a91f1c-7882-458b-8da9-18cbcf852b85",
+      "proposalIndex": 40,
+      "proposalType": "GeneralOptions",
+      "proposerIdentity": "AAMJNDZIAGURZEFMBDYMMAHFVFUCECRNKVSTUQIDPEWNDUBFUHDCTMZFOXZD",
+      "published": "2026-09-03T17:27:16.93",
+      "status": 3,
+      "title": "Smart Contract - Qubic Payment Hub (QPAY)",
+      "totalVotes": 652,
+      "url": "https://github.com/qubic/proposal/blob/6338fa6cbd09f8c94ab792e1eb5d08afe66d1a97/SmartContracts/2026-08-29-QPayhub.md"
+    }
+  ],
+  "source": "api.qubic.li/Voting/EpochHistory",
+  "status": "complete",
+  "updatedAt": "2026-09-10T06:00:54Z"
+}

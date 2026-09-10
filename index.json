@@ -1,34 +1,41 @@
 {
   "archives": [
     {
+      "epoch": 229,
+      "generatedAt": "2026-09-10T07:36:01Z",
+      "path": "epochs/229/manifest.json",
+      "status": "complete"
+    },
+    {
+      "commitSha": "ee1c1b76ee5d3cae80eb38c47067d2fa7de25c7c",
       "epoch": 228,
       "generatedAt": "2026-09-03T07:35:52Z",
       "path": "epochs/228/manifest.json",
       "status": "complete"
     },
     {
-      "commitSha": "d6c6f7d68f38da0772c8f3e8909d70173b951653",
+      "commitSha": "ee1c1b76ee5d3cae80eb38c47067d2fa7de25c7c",
       "epoch": 227,
       "generatedAt": "2026-08-26T23:50:47Z",
       "path": "epochs/227/manifest.json",
       "status": "complete"
     },
     {
-      "commitSha": "d6c6f7d68f38da0772c8f3e8909d70173b951653",
+      "commitSha": "ee1c1b76ee5d3cae80eb38c47067d2fa7de25c7c",
       "epoch": 226,
       "generatedAt": "2026-08-19T23:50:39Z",
       "path": "epochs/226/manifest.json",
       "status": "complete"
     },
     {
-      "commitSha": "d6c6f7d68f38da0772c8f3e8909d70173b951653",
+      "commitSha": "ee1c1b76ee5d3cae80eb38c47067d2fa7de25c7c",
       "epoch": 225,
       "generatedAt": "2026-08-12T23:50:31Z",
       "path": "epochs/225/manifest.json",
       "status": "complete"
     },
     {
-      "commitSha": "d6c6f7d68f38da0772c8f3e8909d70173b951653",
+      "commitSha": "ee1c1b76ee5d3cae80eb38c47067d2fa7de25c7c",
       "epoch": 224,
       "generatedAt": "2026-08-05T21:49:59Z",
       "path": "epochs/224/manifest.json",
@@ -614,5 +621,5 @@
   "branch": "main",
   "repository": "XARKUR/qubic-history",
   "schemaVersion": "qubic-history-v2",
-  "updatedAt": "2026-09-03T07:35:52Z"
+  "updatedAt": "2026-09-10T07:36:01Z"
 }

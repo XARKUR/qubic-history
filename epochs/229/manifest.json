@@ -1,0 +1,68 @@
+{
+  "epoch": 229,
+  "files": {
+    "mining/hashrate.json": {
+      "sha256": "553e3ee0f41c6c874a0111048c8161d087f8b755156baa89eee3917cf14fafa9",
+      "sizeBytes": 1250764,
+      "status": "ok"
+    },
+    "mining/snapshot.json": {
+      "sha256": "2621c9f7074ee1ecdb7eda77741ad975ff1b204af0f571de7b1abb670a27c28a",
+      "sizeBytes": 2959,
+      "status": "ok"
+    },
+    "price/market.json": {
+      "sha256": "3e1930c4ca1f52db4683d4a8160fe32cb437834060ce304b0a7f8b3fd46b4ded",
+      "sizeBytes": 512,
+      "status": "ok"
+    },
+    "proposals/ballots.jsonl": {
+      "sha256": "f26790d4ec79c9c86fe6c27091d91dfbd7a103685acf86a80c271a86b6fca936",
+      "sizeBytes": 475960,
+      "status": "ok"
+    },
+    "proposals/documents/40-smart-contract-qubic-payment-hub-qpay-92370a6510.md": {
+      "sha256": "92370a6510fe24295465f9974f8ad83e9849817d2df664a83dd9ec576b350472",
+      "sizeBytes": 64145,
+      "status": "ok"
+    },
+    "proposals/documents/67-qubic-agi-true-ai-research-2026-q4-76100c8d23.md": {
+      "sha256": "76100c8d2322c6e6a36375d21156e79dff66a714dc9e36dba696a1625b59f7f4",
+      "sizeBytes": 28534,
+      "status": "ok"
+    },
+    "proposals/documents/73-qubic-science-neuraxon-artificial-evolution-2026-89e2a973e1.md": {
+      "sha256": "89e2a973e137fab2ed0011afee216912fe33a91e44acc6ed901d8d1d7a1ec5e7",
+      "sizeBytes": 6880,
+      "status": "ok"
+    },
+    "proposals/documents/manifest.json": {
+      "sha256": "9183a56286b4ec868e2cd9ef196ebfbc4cf96db99199d350630b96b234a6447e",
+      "sizeBytes": 2267,
+      "status": "ok"
+    },
+    "proposals/history.json": {
+      "sha256": "62865214500d15d40d96de31b48e75927750c9a2f3c46f26ad2b073aa3f64ac3",
+      "sizeBytes": 4480,
+      "status": "ok"
+    },
+    "proposals/raw.json": {
+      "sha256": "8a6f45f31a8f3ed6d84973647b557d9d116502642cb4fb9bb79236b43c285420",
+      "sizeBytes": 654249,
+      "status": "ok"
+    },
+    "qearn/snapshot.json": {
+      "sha256": "81eb45c31fae6fe7e7ab663288923933e1b4b89f6baaa723d374a1491524fc0b",
+      "sizeBytes": 509,
+      "status": "ok"
+    },
+    "qearn/unlocks.jsonl": {
+      "sha256": "154a0fb68e8f17a6bb8dc7c4c2236568a7443f87f177a1baf3b6663f5bd2af6c",
+      "sizeBytes": 54198,
+      "status": "ok"
+    }
+  },
+  "generatedAt": "2026-09-10T07:36:01Z",
+  "schemaVersion": "qubic-history-v2",
+  "status": "complete"
+}

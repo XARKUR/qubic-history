@@ -1,0 +1,51 @@
+{
+  "documents": [
+    {
+      "archivePath": "40-smart-contract-qubic-payment-hub-qpay-92370a6510.md",
+      "canonicalUrl": "https://github.com/qubic/proposal/blob/6338fa6cbd09f8c94ab792e1eb5d08afe66d1a97/SmartContracts/2026-08-29-QPayhub.md",
+      "contentType": "application/vnd.github.raw; charset=utf-8",
+      "expectedSha256": "92370a6510fe24295465f9974f8ad83e9849817d2df664a83dd9ec576b350472",
+      "owner": "qubic",
+      "path": "SmartContracts/2026-08-29-QPayhub.md",
+      "proposalIndex": 40,
+      "ref": "6338fa6cbd09f8c94ab792e1eb5d08afe66d1a97",
+      "repo": "proposal",
+      "sha256": "92370a6510fe24295465f9974f8ad83e9849817d2df664a83dd9ec576b350472",
+      "sourceType": "github_blob",
+      "status": "saved",
+      "title": "Smart Contract - Qubic Payment Hub (QPAY)"
+    },
+    {
+      "archivePath": "67-qubic-agi-true-ai-research-2026-q4-76100c8d23.md",
+      "canonicalUrl": "https://github.com/qubicsci/Proposals/blob/56fd1b8/QubicScience2026-Q4.md",
+      "contentType": "application/vnd.github.raw; charset=utf-8",
+      "expectedSha256": "76100c8d2322c6e6a36375d21156e79dff66a714dc9e36dba696a1625b59f7f4",
+      "owner": "qubicsci",
+      "path": "QubicScience2026-Q4.md",
+      "proposalIndex": 67,
+      "ref": "56fd1b8",
+      "repo": "Proposals",
+      "sha256": "76100c8d2322c6e6a36375d21156e79dff66a714dc9e36dba696a1625b59f7f4",
+      "sourceType": "github_blob",
+      "status": "saved",
+      "title": "QUBIC AGI (True AI) Research 2026 Q4"
+    },
+    {
+      "archivePath": "73-qubic-science-neuraxon-artificial-evolution-2026-89e2a973e1.md",
+      "canonicalUrl": "https://github.com/qubicsci/Proposals/blob/93c3eea/QubicScienceEA2026.md",
+      "contentType": "application/vnd.github.raw; charset=utf-8",
+      "expectedSha256": "89e2a973e137fab2ed0011afee216912fe33a91e44acc6ed901d8d1d7a1ec5e7",
+      "owner": "qubicsci",
+      "path": "QubicScienceEA2026.md",
+      "proposalIndex": 73,
+      "ref": "93c3eea",
+      "repo": "Proposals",
+      "sha256": "89e2a973e137fab2ed0011afee216912fe33a91e44acc6ed901d8d1d7a1ec5e7",
+      "sourceType": "github_blob",
+      "status": "saved",
+      "title": "QUBIC SCIENCE NEURAXON - Artificial Evolution 2026"
+    }
+  ],
+  "epoch": 229,
+  "generatedAt": "2026-09-10T07:36:01Z"
+}
