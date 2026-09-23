@@ -1,0 +1,73 @@
+{
+  "epoch": 231,
+  "files": {
+    "mining/hashrate.json": {
+      "sha256": "98b5344aa48a272a07ed603a5fd2c09c2b879c8fc7bac5d83eea1f9c2677c836",
+      "sizeBytes": 924824,
+      "status": "ok"
+    },
+    "mining/snapshot.json": {
+      "sha256": "8a9c53b246d604daf330b2ef82a1bfd785c222a36215e61334618602f77cc6be",
+      "sizeBytes": 2257,
+      "status": "ok"
+    },
+    "price/market.json": {
+      "sha256": "456d04e83b9f3ab33cb90ae247fafc5cbbb7a02c38b77bfd487c908298220ece",
+      "sizeBytes": 513,
+      "status": "ok"
+    },
+    "proposals/ballots.jsonl": {
+      "sha256": "c3e4af040eff4b764cfe5d979b7242ccd856e06a89b8ef22a1fc8611fbd89aee",
+      "sizeBytes": 419435,
+      "status": "ok"
+    },
+    "proposals/documents/2-community-management-ccf-proposal-for-october-u0026-november-77dfb30b00.md": {
+      "sha256": "77dfb30b0075aa91149b9a683d7677e1a9cdbd6cb3de6195388c94b334049f10",
+      "sizeBytes": 19557,
+      "status": "ok"
+    },
+    "proposals/documents/42-smart-contract-qdoge-treasury-qtreat-5f9d5a9654.md": {
+      "sha256": "5f9d5a9654e68175e1f79bb48859dead8fda6f805f94f5e41429b800dbd91c51",
+      "sizeBytes": 113942,
+      "status": "ok"
+    },
+    "proposals/documents/43-qubic-proposal-qusino-upgrade-coin-flip-random-result-bank-f2c1a3d02d.md": {
+      "sha256": "f2c1a3d02d1aee92a286472b6acd4fbe5c13bacf3449345294288304e5ed79fc",
+      "sizeBytes": 10538,
+      "status": "ok"
+    },
+    "proposals/documents/74-fund-qubic-core-base-services-reserve-54a67007af.md": {
+      "sha256": "54a67007afe12e0ef0df02ebb3d4ffe3ce75803e393a87fc7c7f643831b3a9bf",
+      "sizeBytes": 5880,
+      "status": "ok"
+    },
+    "proposals/documents/manifest.json": {
+      "sha256": "27697a3804dccb47e6c72bc6f41a5c38c3c8e8cf10018bd75413fb45dfae3212",
+      "sizeBytes": 3329,
+      "status": "ok"
+    },
+    "proposals/history.json": {
+      "sha256": "b421a65c0782ef61afa8b4a5d867154a8cc0342f4469ca39b06715c6f45830b1",
+      "sizeBytes": 6196,
+      "status": "ok"
+    },
+    "proposals/raw.json": {
+      "sha256": "c6bb1e34bcdfe76138426a8f3639d06ed51d202e7b88a29bd0c70f63f470ef97",
+      "sizeBytes": 567147,
+      "status": "ok"
+    },
+    "qearn/snapshot.json": {
+      "sha256": "fde1eb17e57b365a230a919aba30cbb2fe1e42c321f698801278fa418d5aa6a4",
+      "sizeBytes": 572,
+      "status": "ok"
+    },
+    "qearn/unlocks.jsonl": {
+      "sha256": "766e6d39059738174ccfb396db7b5b35e41c20ff894eaf780f372124c09690fc",
+      "sizeBytes": 63304,
+      "status": "ok"
+    }
+  },
+  "generatedAt": "2026-09-23T13:36:04Z",
+  "schemaVersion": "qubic-history-v2",
+  "status": "complete"
+}

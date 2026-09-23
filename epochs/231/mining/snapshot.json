@@ -1,0 +1,84 @@
+{
+  "baseLine": {
+    "qli": {
+      "averagePoolHashrate": 42831,
+      "coverage": 0.9658,
+      "hashPerSolution": 0.06176909598286716,
+      "networkTotalHashrate": 339158,
+      "poolHashrate": 41244,
+      "poolHashrateSamples": 1947,
+      "poolSolutions": 693405
+    }
+  },
+  "epoch": 231,
+  "epochElapsedHours": 167.9636,
+  "estimatedAverageScore": 8124.142,
+  "estimatedEpochSolutions": 5491920,
+  "networkTotalSolutions": 5490743,
+  "pools": {
+    "jetski": {
+      "coinsPerShare": 838.7090369781605,
+      "coinsPerSolution": 838.7090369729805,
+      "effectivePoolHashrate": 156233,
+      "estimatedEpochSolutions": 2529862.1376,
+      "poolSolutions": 2529314,
+      "poolSolutionsPerHour": 15058.7032,
+      "pplnsShares": 1490880,
+      "pplnsSolutions": 1490880,
+      "sharesPerSolution": 1,
+      "soloSolutions": 1038434,
+      "sourceStatus": "ok",
+      "stale": false
+    },
+    "minerlab": {
+      "coinsPerShare": 0.0,
+      "coinsPerSolution": 0.0,
+      "effectivePoolHashrate": 76841,
+      "estimatedEpochSolutions": 1244289.5976,
+      "poolSolutions": 1244020,
+      "poolSolutionsPerHour": 7406.4857,
+      "pplnsShares": 0,
+      "pplnsSolutions": null,
+      "sharesPerSolution": 0,
+      "soloSolutions": null,
+      "sourceStatus": "ok",
+      "stale": false
+    },
+    "qli": {
+      "coinsPerShare": 1578.0,
+      "coinsPerSolution": 23719.0,
+      "effectivePoolHashrate": 46021,
+      "estimatedEpochSolutions": 745213.4592,
+      "poolSolutions": 745052,
+      "poolSolutionsPerHour": 4435.7944,
+      "pplnsShares": 6019027,
+      "pplnsSolutions": 693405,
+      "sharesPerSolution": 8,
+      "soloSolutions": 51647,
+      "sourceStatus": "ok",
+      "stale": false
+    }
+  },
+  "rawHashrate": {
+    "jetski": {
+      "averageRawHashrate": 698727,
+      "coverage": 0.0704,
+      "rawHashrate": 912662,
+      "rawHashrateSamples": 142
+    },
+    "minerlab": {
+      "averageRawHashrate": 206500,
+      "coverage": 0.0704,
+      "rawHashrate": 159140,
+      "rawHashrateSamples": 142
+    },
+    "qli": {
+      "averageRawHashrate": 95285,
+      "coverage": 0.9658,
+      "rawHashrate": 89388,
+      "rawHashrateSamples": 1947
+    }
+  },
+  "solutionsPerHourCalculated": 32690,
+  "updatedAt": "2026-09-23T11:57:50Z"
+}

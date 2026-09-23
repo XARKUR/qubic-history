@@ -72,8 +72,8 @@
       "status": "ok"
     },
     "qearn/snapshot.json": {
-      "sha256": "a102e3e00fc8d04ad90e9533e6dd54a612539246ace613f5fa020e6d6a050b33",
-      "sizeBytes": 548,
+      "sha256": "f59aee3a566c77017027cd0102e5c02a1537b776ef0846f78040a93ec2ba8efd",
+      "sizeBytes": 605,
       "status": "ok"
     }
   },

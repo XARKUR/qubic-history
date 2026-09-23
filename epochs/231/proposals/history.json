@@ -1,0 +1,171 @@
+{
+  "documentStatuses": [
+    {
+      "canonicalUrl": "https://github.com/qubic/qct/blob/2fb37306d92af09f6f52e49c94aa88cd0da60648/funding/2026-09-15-Base-Services-Reserve-proposal.md",
+      "documentKey": "563d2916b3a3b4261c079b4bc21b3874e7137f6de61f7f105803090eac91c32c",
+      "epoch": 231,
+      "error": null,
+      "httpStatus": 200,
+      "proposalId": "fb35a2d1-6007-4c95-91dc-7b3ec2a15a9a",
+      "proposalIndex": 74,
+      "published": "2026-09-19T22:53:37Z",
+      "sha256": "54a67007afe12e0ef0df02ebb3d4ffe3ce75803e393a87fc7c7f643831b3a9bf",
+      "source": "epoch_history",
+      "sourceType": "github_blob",
+      "status": "saved",
+      "title": "Fund Qubic Core — Base Services Reserve"
+    },
+    {
+      "canonicalUrl": "https://github.com/nineisten/qusino/blob/e4c58ee193358a34e93f581a19b00b7686e5d8f9/docs/Upgrade.md",
+      "documentKey": "111b8ce1def204e355f1aeac7f0dbbb0ff3545ae523d578b9864996c7feac533",
+      "epoch": 231,
+      "error": null,
+      "httpStatus": 200,
+      "proposalId": "a909c4ac-ae96-498b-9db0-506529ea827c",
+      "proposalIndex": 43,
+      "published": "2026-09-19T22:37:39Z",
+      "sha256": "f2c1a3d02d1aee92a286472b6acd4fbe5c13bacf3449345294288304e5ed79fc",
+      "source": "epoch_history",
+      "sourceType": "github_blob",
+      "status": "saved",
+      "title": "Qubic Proposal: Qusino Upgrade — Coin Flip + RANDOM Result Bank"
+    },
+    {
+      "canonicalUrl": "https://github.com/qubic/proposal/blob/4ee54d8aef2f3e4adeb3ad6f4974d50f58641dd1/SmartContracts/2026-09-18-qtreat_sc_proposal.md",
+      "documentKey": "7e22ecbda34cc37d2a4c4a157a9e5b2975d5bd67fde5c9a6fc35b1348ed84738",
+      "epoch": 231,
+      "error": null,
+      "httpStatus": 200,
+      "proposalId": "1c4f836d-e51a-4bc7-b12c-b2636393ccd2",
+      "proposalIndex": 42,
+      "published": "2026-09-18T19:09:17Z",
+      "sha256": "5f9d5a9654e68175e1f79bb48859dead8fda6f805f94f5e41429b800dbd91c51",
+      "source": "epoch_history",
+      "sourceType": "github_blob",
+      "status": "saved",
+      "title": "Smart Contract - QDOGE Treasury (QTREAT)"
+    },
+    {
+      "canonicalUrl": "https://github.com/jgvks/Community-Management-CCF-Proposal/blob/c013641/Community-Management-CCF-Proposal-for-October-November.md",
+      "documentKey": "9d30b4552eb4914f89d85e622ab0bf1c8f9dc8eed61a9c617bf8394448a9886d",
+      "epoch": 231,
+      "error": null,
+      "httpStatus": 200,
+      "proposalId": "7bfaa2c2-e48e-4a7e-8f53-23396c917889",
+      "proposalIndex": 2,
+      "published": "2026-09-17T05:52:29Z",
+      "sha256": "77dfb30b0075aa91149b9a683d7677e1a9cdbd6cb3de6195388c94b334049f10",
+      "source": "epoch_history",
+      "sourceType": "github_blob",
+      "status": "saved",
+      "title": "Community Management CCF Proposal for October \\u0026 November"
+    }
+  ],
+  "epoch": 231,
+  "proposalCount": 4,
+  "proposals": [
+    {
+      "epoch": 231,
+      "hasVotes": true,
+      "options": [
+        {
+          "percentage": 5.68,
+          "title": "No Transfer",
+          "votes": 32
+        },
+        {
+          "percentage": 94.32,
+          "title": "Yes, send 190,000,000,000 $QUBIC",
+          "votes": 531
+        }
+      ],
+      "proposalId": "fb35a2d1-6007-4c95-91dc-7b3ec2a15a9a",
+      "proposalIndex": 74,
+      "proposalType": "Transfer",
+      "proposerIdentity": "ABOTCUOPSNCRMFIUTFHTMDUUBWRCVCKEVEYSNPHHTDJGEVAYOKNWMVXAHWNE",
+      "published": "2026-09-19T22:53:37Z",
+      "status": 3,
+      "title": "Fund Qubic Core — Base Services Reserve",
+      "totalVotes": 563,
+      "url": "https://github.com/qubic/qct/blob/2fb37306d92af09f6f52e49c94aa88cd0da60648/funding/2026-09-15-Base-Services-Reserve-proposal.md"
+    },
+    {
+      "epoch": 231,
+      "hasVotes": false,
+      "options": [
+        {
+          "percentage": 0.0,
+          "title": "No",
+          "votes": 0
+        },
+        {
+          "percentage": 0.0,
+          "title": "Yes",
+          "votes": 0
+        }
+      ],
+      "proposalId": "a909c4ac-ae96-498b-9db0-506529ea827c",
+      "proposalIndex": 43,
+      "proposalType": "GeneralOptions",
+      "proposerIdentity": "ABEBXWUASMTIZCJYADFRCZLICZRDHFSVUCHDGCUASGCCFSPYSGZLQVXDGIBM",
+      "published": "2026-09-19T22:37:39Z",
+      "status": 4,
+      "title": "Qubic Proposal: Qusino Upgrade — Coin Flip + RANDOM Result Bank",
+      "totalVotes": 0,
+      "url": "https://github.com/nineisten/qusino/blob/e4c58ee193358a34e93f581a19b00b7686e5d8f9/docs/Upgrade.md"
+    },
+    {
+      "epoch": 231,
+      "hasVotes": true,
+      "options": [
+        {
+          "percentage": 7.28,
+          "title": "No",
+          "votes": 41
+        },
+        {
+          "percentage": 92.72,
+          "title": "Yes",
+          "votes": 522
+        }
+      ],
+      "proposalId": "1c4f836d-e51a-4bc7-b12c-b2636393ccd2",
+      "proposalIndex": 42,
+      "proposalType": "GeneralOptions",
+      "proposerIdentity": "YVMZJRFEJENFNBJBVHQNUDUOYKBCSRGJHWNEIIBOOEUTJLAUHTIAOHFDOMSN",
+      "published": "2026-09-18T19:09:17Z",
+      "status": 3,
+      "title": "Smart Contract - QDOGE Treasury (QTREAT)",
+      "totalVotes": 563,
+      "url": "https://github.com/qubic/proposal/blob/4ee54d8aef2f3e4adeb3ad6f4974d50f58641dd1/SmartContracts/2026-09-18-qtreat_sc_proposal.md"
+    },
+    {
+      "epoch": 231,
+      "hasVotes": true,
+      "options": [
+        {
+          "percentage": 47.96,
+          "title": "No Transfer",
+          "votes": 270
+        },
+        {
+          "percentage": 52.04,
+          "title": "Yes, send 45,370,000,000 $QUBIC",
+          "votes": 293
+        }
+      ],
+      "proposalId": "7bfaa2c2-e48e-4a7e-8f53-23396c917889",
+      "proposalIndex": 2,
+      "proposalType": "Transfer",
+      "proposerIdentity": "TTVGKPIMQTGWDFRNQPAZWJDDHGADFXLPASJGQYIPTDVVVBYMBWGXLHNFRVRD",
+      "published": "2026-09-17T05:52:29Z",
+      "status": 3,
+      "title": "Community Management CCF Proposal for October \\u0026 November",
+      "totalVotes": 563,
+      "url": "https://github.com/jgvks/Community-Management-CCF-Proposal/blob/c013641/Community-Management-CCF-Proposal-for-October-November.md"
+    }
+  ],
+  "source": "api.qubic.li/Voting/EpochHistory",
+  "status": "complete",
+  "updatedAt": "2026-09-23T18:00:04Z"
+}
