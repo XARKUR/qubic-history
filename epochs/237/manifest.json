@@ -1,0 +1,78 @@
+{
+  "epoch": 237,
+  "files": {
+    "ipo/auctions.jsonl": {
+      "sha256": "a6a2e793b1bd02e5c8abf4192c742c69123ae57a04f0bbfbfe0ce76028315d68",
+      "sizeBytes": 69809,
+      "status": "ok"
+    },
+    "ipo/contracts.json": {
+      "sha256": "b938dc3dbdeb0e38929d912e72192ed5097935e560087db50aa2cd17673e1c9c",
+      "sizeBytes": 393,
+      "status": "ok"
+    },
+    "ipo/documents/31-qpump-332cc72fc9.txt": {
+      "sha256": "332cc72fc9e9e8a80c0601195a62512e1de7d4c4f8e519962e58fcf401dd420b",
+      "sizeBytes": 48806,
+      "status": "ok"
+    },
+    "ipo/documents/manifest.json": {
+      "sha256": "308a0bb4fc980f84209a4b9add6f269f4525ea747d90896280585f3f04ea3da0",
+      "sizeBytes": 624,
+      "status": "ok"
+    },
+    "mining/hashrate.json": {
+      "sha256": "f187cfa23a78d1258bdda8a55a55aa19e3b3e20833fc52ccdd65ec4a0b03909c",
+      "sizeBytes": 1230865,
+      "status": "ok"
+    },
+    "mining/snapshot.json": {
+      "sha256": "ec3ed0f3db68b9a897e2e83827820bdc594e21c3cdbe6d3ca2614fb161786b24",
+      "sizeBytes": 2250,
+      "status": "ok"
+    },
+    "price/market.json": {
+      "sha256": "82a805d71b2c3921f6cc665f04f36988a2d0d308f98e84536f45be117e937eb8",
+      "sizeBytes": 510,
+      "status": "ok"
+    },
+    "proposals/ballots.jsonl": {
+      "sha256": "cdebe71a4bea8e7fe0f4c2784a11f57c8fb735b6119987f105505352dc5b3350",
+      "sizeBytes": 130895,
+      "status": "ok"
+    },
+    "proposals/documents/40-investors-pilot-model-proposal-12dd31f5b0.md": {
+      "sha256": "12dd31f5b08b6beb6a5fce70a4f81755ef46f2d5e2859735a87d7fb187036546",
+      "sizeBytes": 14533,
+      "status": "ok"
+    },
+    "proposals/documents/manifest.json": {
+      "sha256": "89fff901a0b6113c1ecc1c05f6eba515511047e60693481d346f6be3f103d5c0",
+      "sizeBytes": 859,
+      "status": "ok"
+    },
+    "proposals/history.json": {
+      "sha256": "914c6453b7e9a3af718b6a5d63f16466ba4120cd3e93272fe1488e3a8996f280",
+      "sizeBytes": 1651,
+      "status": "ok"
+    },
+    "proposals/raw.json": {
+      "sha256": "7f239f14271cf1547e87dafa0371d5bb523458c57210536819410ac57a03fa91",
+      "sizeBytes": 186438,
+      "status": "ok"
+    },
+    "qearn/snapshot.json": {
+      "sha256": "1ee42d8234a43ba42352fbaa037a0c0c69f3fe0b6a613b3060c83a3ed1a4c920",
+      "sizeBytes": 572,
+      "status": "ok"
+    },
+    "qearn/unlocks.jsonl": {
+      "sha256": "3221f61bd6dfb1383c28629f91a24a7707a2c23c34d1f6236777897b9f4f9620",
+      "sizeBytes": 58962,
+      "status": "ok"
+    }
+  },
+  "generatedAt": "2026-11-11T14:08:04Z",
+  "schemaVersion": "qubic-history-v2",
+  "status": "complete"
+}

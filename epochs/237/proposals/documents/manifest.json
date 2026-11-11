@@ -1,0 +1,21 @@
+{
+  "documents": [
+    {
+      "archivePath": "40-investors-pilot-model-proposal-12dd31f5b0.md",
+      "canonicalUrl": "https://github.com/kimz-Q/Computor-Donation-Investors-Pilot-Model/blob/ff16295/Computor donation-investors-pilot-model.md",
+      "contentType": "application/vnd.github.raw; charset=utf-8",
+      "expectedSha256": "12dd31f5b08b6beb6a5fce70a4f81755ef46f2d5e2859735a87d7fb187036546",
+      "owner": "kimz-Q",
+      "path": "Computor donation-investors-pilot-model.md",
+      "proposalIndex": 40,
+      "ref": "ff16295",
+      "repo": "Computor-Donation-Investors-Pilot-Model",
+      "sha256": "12dd31f5b08b6beb6a5fce70a4f81755ef46f2d5e2859735a87d7fb187036546",
+      "sourceType": "github_blob",
+      "status": "saved",
+      "title": "🌐Investors Pilot Model Proposal"
+    }
+  ],
+  "epoch": 237,
+  "generatedAt": "2026-11-11T14:08:04Z"
+}

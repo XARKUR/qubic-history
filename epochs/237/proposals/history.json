@@ -1,0 +1,51 @@
+{
+  "documentStatuses": [
+    {
+      "canonicalUrl": "https://github.com/kimz-Q/Computor-Donation-Investors-Pilot-Model/blob/ff16295/Computor donation-investors-pilot-model.md",
+      "documentKey": "0a1a7b91b6739cecdadc1a4c2ac6cdea890b90dd086442a04c9e97514bb55cf2",
+      "epoch": 237,
+      "error": null,
+      "httpStatus": 200,
+      "proposalId": "02ce487c-6b84-4e07-b8f9-bb80dbfbd42c",
+      "proposalIndex": 40,
+      "published": "2026-10-29T18:24:17Z",
+      "sha256": "12dd31f5b08b6beb6a5fce70a4f81755ef46f2d5e2859735a87d7fb187036546",
+      "source": "epoch_history",
+      "sourceType": "github_blob",
+      "status": "saved",
+      "title": "🌐Investors Pilot Model Proposal"
+    }
+  ],
+  "epoch": 237,
+  "proposalCount": 1,
+  "proposals": [
+    {
+      "epoch": 237,
+      "hasVotes": true,
+      "options": [
+        {
+          "percentage": 90.31,
+          "title": "No",
+          "votes": 503
+        },
+        {
+          "percentage": 9.69,
+          "title": "Yes",
+          "votes": 54
+        }
+      ],
+      "proposalId": "02ce487c-6b84-4e07-b8f9-bb80dbfbd42c",
+      "proposalIndex": 40,
+      "proposalType": "GeneralOptions",
+      "proposerIdentity": "AAMJNDZIAGURZEFMBDYMMAHFVFUCECRNKVSTUQIDPEWNDUBFUHDCTMZFOXZD",
+      "published": "2026-10-29T18:24:17Z",
+      "status": 6,
+      "title": "🌐Investors Pilot Model Proposal",
+      "totalVotes": 557,
+      "url": "https://github.com/kimz-Q/Computor-Donation-Investors-Pilot-Model/blob/ff16295/Computor donation-investors-pilot-model.md"
+    }
+  ],
+  "source": "api.qubic.li/Voting/EpochHistory",
+  "status": "complete",
+  "updatedAt": "2026-11-11T12:02:57Z"
+}
