@@ -1,0 +1,58 @@
+{
+  "epoch": 239,
+  "files": {
+    "mining/hashrate.json": {
+      "sha256": "4b2d20d0c123b68c4c387ffca68527dbf82a777fe2054756e3b11ca556a3c4b2",
+      "sizeBytes": 1225539,
+      "status": "ok"
+    },
+    "mining/snapshot.json": {
+      "sha256": "d0ac32fb2df1c36f196f23748f47f75611e127d183ae1d8c8068072ae4500b7e",
+      "sizeBytes": 2176,
+      "status": "ok"
+    },
+    "price/market.json": {
+      "sha256": "526d51678c8ea944762ecdd2620e04696d9db39ed9eea4a612e2ebbf15628be7",
+      "sizeBytes": 513,
+      "status": "ok"
+    },
+    "proposals/ballots.jsonl": {
+      "sha256": "cf12ed0aae84c711961545061f08debe367ca293235f965eb5d7568911981093",
+      "sizeBytes": 87848,
+      "status": "ok"
+    },
+    "proposals/documents/77-proposal-to-fund-qubic-church-bpp-9000-public-tools-and-the-qubic-church-app-c0a32a78d8.md": {
+      "sha256": "c0a32a78d8384b82116b752b67735078bd385b656e0d5014c76966413924a497",
+      "sizeBytes": 8670,
+      "status": "ok"
+    },
+    "proposals/documents/manifest.json": {
+      "sha256": "3912b4dece040a3829ce8bafcc8a9e34858c440c7c7e928f561cebc8b8213210",
+      "sizeBytes": 996,
+      "status": "ok"
+    },
+    "proposals/history.json": {
+      "sha256": "d9a327ca093fe1d249a4bc53f4a976e658fb9b0c195c5140a13ea7f9a5f8dee5",
+      "sizeBytes": 1818,
+      "status": "ok"
+    },
+    "proposals/raw.json": {
+      "sha256": "596897be70869e630440cb6d225f7bba1d89102b32dc85e7c49bfb72d4a95f2f",
+      "sizeBytes": 106722,
+      "status": "ok"
+    },
+    "qearn/snapshot.json": {
+      "sha256": "46cbd28750d8ede340f1fade4ee24ce00e95de0660aec8d396c0b62f67b0eee3",
+      "sizeBytes": 546,
+      "status": "ok"
+    },
+    "qearn/unlocks.jsonl": {
+      "sha256": "8ee2d724e7ee20f4031bac66d1d11ae777c57562d8851e31eb1b7e1b02862c17",
+      "sizeBytes": 59693,
+      "status": "ok"
+    }
+  },
+  "generatedAt": "2026-11-18T12:41:05Z",
+  "schemaVersion": "qubic-history-v2",
+  "status": "complete"
+}

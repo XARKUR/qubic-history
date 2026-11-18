@@ -1,0 +1,21 @@
+{
+  "documents": [
+    {
+      "archivePath": "77-proposal-to-fund-qubic-church-bpp-9000-public-tools-and-the-qubic-church-app-c0a32a78d8.md",
+      "canonicalUrl": "https://github.com/daviduis777-oss/proposal/blob/bf54affa6a18a93ca573a6a4369dc9433f7a0972/CCF-Funding-Requests/2026-11-11-qubic-church-bpp9000.md",
+      "contentType": "application/vnd.github.raw; charset=utf-8",
+      "expectedSha256": "c0a32a78d8384b82116b752b67735078bd385b656e0d5014c76966413924a497",
+      "owner": "daviduis777-oss",
+      "path": "CCF-Funding-Requests/2026-11-11-qubic-church-bpp9000.md",
+      "proposalIndex": 77,
+      "ref": "bf54affa6a18a93ca573a6a4369dc9433f7a0972",
+      "repo": "proposal",
+      "sha256": "c0a32a78d8384b82116b752b67735078bd385b656e0d5014c76966413924a497",
+      "sourceType": "github_blob",
+      "status": "saved",
+      "title": "Proposal to Fund Qubic Church: BPP-9000 Public Tools and the Qubic Church App"
+    }
+  ],
+  "epoch": 239,
+  "generatedAt": "2026-11-18T12:41:05Z"
+}

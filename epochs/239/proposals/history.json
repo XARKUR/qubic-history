@@ -1,0 +1,51 @@
+{
+  "documentStatuses": [
+    {
+      "canonicalUrl": "https://github.com/daviduis777-oss/proposal/blob/bf54affa6a18a93ca573a6a4369dc9433f7a0972/CCF-Funding-Requests/2026-11-11-qubic-church-bpp9000.md",
+      "documentKey": "bb4cd1a6191b258ca55f82e2437e0f99bfe929db091eda005ca793745f8ddada",
+      "epoch": 239,
+      "error": null,
+      "httpStatus": 200,
+      "proposalId": "9335bd33-c752-4cb7-8898-8bc30b14629b",
+      "proposalIndex": 77,
+      "published": "2026-11-14T21:47:53Z",
+      "sha256": "c0a32a78d8384b82116b752b67735078bd385b656e0d5014c76966413924a497",
+      "source": "epoch_history",
+      "sourceType": "github_blob",
+      "status": "saved",
+      "title": "Proposal to Fund Qubic Church: BPP-9000 Public Tools and the Qubic Church App"
+    }
+  ],
+  "epoch": 239,
+  "proposalCount": 1,
+  "proposals": [
+    {
+      "epoch": 239,
+      "hasVotes": true,
+      "options": [
+        {
+          "percentage": 44.62,
+          "title": "No Transfer",
+          "votes": 141
+        },
+        {
+          "percentage": 55.38,
+          "title": "Yes, send 16,800,000,000 $QUBIC",
+          "votes": 175
+        }
+      ],
+      "proposalId": "9335bd33-c752-4cb7-8898-8bc30b14629b",
+      "proposalIndex": 77,
+      "proposalType": "Transfer",
+      "proposerIdentity": "AIOKNYBFTWWLHCMWLFPLNHFINFOBIYAKXFQETWKSAAKOKFHVSZFTWRHHOHLF",
+      "published": "2026-11-14T21:47:53Z",
+      "status": 4,
+      "title": "Proposal to Fund Qubic Church: BPP-9000 Public Tools and the Qubic Church App",
+      "totalVotes": 316,
+      "url": "https://github.com/daviduis777-oss/proposal/blob/bf54affa6a18a93ca573a6a4369dc9433f7a0972/CCF-Funding-Requests/2026-11-11-qubic-church-bpp9000.md"
+    }
+  ],
+  "source": "api.qubic.li/Voting/EpochHistory",
+  "status": "complete",
+  "updatedAt": "2026-11-18T18:00:13Z"
+}
