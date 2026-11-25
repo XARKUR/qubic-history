@@ -1,0 +1,22 @@
+{
+  "bonusAmount": 25277077950,
+  "boostedAmount": 14710185,
+  "boostedPercent": 0.0005819,
+  "burnedAmount": 0,
+  "burnedPercent": 0.0,
+  "currentBonusAmount": 25277077950,
+  "currentLockedAmount": 601067614501,
+  "earlyUnlockedAmount": 350000000,
+  "earlyUnlockedPercent": 0.001,
+  "epoch": 240,
+  "epochsLeft": 52,
+  "lockedAmount": 601417614501,
+  "progress": 1.89,
+  "rewardedAmount": 0,
+  "rewardedPercent": 0.0,
+  "sourceUpdatedAt": "2026-11-25T18:01:07.403970+00:00",
+  "status": "locked",
+  "unlockEpoch": 293,
+  "unlockTime": "2027-11-24",
+  "yield": 0.0421
+}
